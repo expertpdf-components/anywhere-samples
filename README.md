@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://www.html-to-pdf.net/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/expertpdf-components/anywhere-samples/main/images/expertpdf-logo-dark.svg">
+      <img src="https://raw.githubusercontent.com/expertpdf-components/anywhere-samples/main/images/expertpdf-logo.svg" alt="ExpertPdf" height="72">
+    </picture>
+  </a>
+</p>
+
 # ExpertPdf Anywhere - samples
 
 Samples for ExpertPdf Anywhere, the cross-platform ExpertPdf library for .NET, for Windows, Linux and macOS:
