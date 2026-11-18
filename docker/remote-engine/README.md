@@ -56,7 +56,7 @@ and `GlobalSettings.EngineAccessToken`.
 
 ## Notes
 
-- **The engine image**: `ghcr.io/expertpdf/engine:22.0` (Docker Hub mirror: `expertpdf/engine:22.0`), for
+- **The engine image**: `ghcr.io/expertpdf-components/engine:22.0` (Docker Hub mirror: `expertpdf/engine:22.0`), for
   x64 and arm64. Set `EXPERTPDF_ENGINE_IMAGE` to use another tag.
 - **A shared engine**: when one engine serves different callers, uncomment
   `EXPERTPDF_ENGINE_HTTP_CACHE: clear` so no conversion is served a response another one fetched.

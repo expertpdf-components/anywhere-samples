@@ -9,7 +9,7 @@
   "containerDefinitions": [
     {
       "name": "engine",
-      "image": "ghcr.io/expertpdf/engine:22.0",
+      "image": "ghcr.io/expertpdf-components/engine:22.0",
       "essential": true,
       "readonlyRootFilesystem": true,
       "portMappings": [

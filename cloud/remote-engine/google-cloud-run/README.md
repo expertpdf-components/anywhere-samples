@@ -45,7 +45,7 @@ gcloud secrets add-iam-policy-binding expertpdf-engine-token \
 **4. Deploy the engine:**
 
 ```
-gcloud run deploy expertpdf-engine --image ghcr.io/expertpdf/engine:22.0 \
+gcloud run deploy expertpdf-engine --image ghcr.io/expertpdf-components/engine:22.0 \
   --port 8080 --cpu 2 --memory 4Gi --concurrency 8 --timeout 600 \
   --execution-environment gen2 --min-instances 1 \
   --no-invoker-iam-check \

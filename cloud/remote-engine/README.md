@@ -38,7 +38,7 @@ HTTPS.
 
 ## The engine image
 
-`ghcr.io/expertpdf/engine:22.0` (Docker Hub: `expertpdf/engine:22.0`), for x64 and arm64. It runs as a
+`ghcr.io/expertpdf-components/engine:22.0` (Docker Hub: `expertpdf/engine:22.0`), for x64 and arm64. It runs as a
 non-root user with a read-only root file system and needs 2 vCPU and 4 GB of memory per replica for
 real pages. The engine needs no license; the license key is set in the application.
 

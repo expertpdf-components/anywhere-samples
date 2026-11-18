@@ -8,7 +8,7 @@
 services:
   expertpdf-engine:
     # The service name is the library's default endpoint: http://expertpdf-engine:8080.
-    image: ${EXPERTPDF_ENGINE_IMAGE:-ghcr.io/expertpdf/engine:22.0}
+    image: ${EXPERTPDF_ENGINE_IMAGE:-ghcr.io/expertpdf-components/engine:22.0}
     read_only: true
     tmpfs:
       - /tmp

@@ -34,7 +34,7 @@ spec:
         kubernetes.io/os: linux
       containers:
         - name: engine
-          image: ghcr.io/expertpdf/engine:22.0
+          image: ghcr.io/expertpdf-components/engine:22.0
           ports:
             - name: http
               containerPort: 8080

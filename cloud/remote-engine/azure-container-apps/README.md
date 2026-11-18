@@ -51,7 +51,7 @@ application uses:
 ```
 TOKEN=$(openssl rand -hex 32)
 az containerapp create --name expertpdf-engine --resource-group $RG --environment expertpdf-env \
-  --image ghcr.io/expertpdf/engine:22.0 \
+  --image ghcr.io/expertpdf-components/engine:22.0 \
   --ingress internal --target-port 8080 --transport http \
   --cpu 2 --memory 4Gi --min-replicas 1 --max-replicas 3 \
   --secrets "engine-token=$TOKEN" \
