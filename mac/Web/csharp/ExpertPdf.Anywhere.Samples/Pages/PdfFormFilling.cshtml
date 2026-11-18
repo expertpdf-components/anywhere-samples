@@ -1,0 +1,35 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfFormFillingModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Form Fields Filling - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Form Fields Filling Sample for C# and ASP.NET Core. Fill the fields of an existing PDF form.";
+    ViewData["Keywords"] = "pdf form, pdf form fields, pdf form filling, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Form Fields Filling - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to load an existing PDF document that contains a form with ExpertPdf Anywhere, fill some
+            of its fields and save the document. The fields can be flattened, which turns them into page content that can
+            no longer be changed.
+            <br />
+            <br />
+            Here is the test document that contains a form:<br />
+            <a href="files/w-9.pdf" target="_blank">Test form</a><br />
+            <br />
+            Click on the "Create PDF" button below to see the result.
+        </p>
+        <p>
+            <input type="checkbox" asp-for="ChkFlatten" /> Flatten the form fields
+        </p>
+        <p>
+            <input type="submit" id="BtnCreatePdf" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

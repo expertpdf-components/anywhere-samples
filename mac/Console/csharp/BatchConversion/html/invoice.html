@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Invoice F-2026-1017</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #222; margin: 0; padding: 28px 36px; }
+        .top { display: flex; justify-content: space-between; align-items: flex-start; }
+        .seller { font-size: 12px; color: #444; text-align: right; line-height: 1.45; }
+        .seller strong { font-size: 15px; color: #1f5fa8; }
+        h1 { font-size: 26px; color: #1f5fa8; margin: 26px 0 4px 0; }
+        .meta { display: flex; justify-content: space-between; margin-top: 18px; }
+        .meta address { font-style: normal; line-height: 1.45; }
+        .meta table td { padding: 2px 0 2px 16px; }
+        .meta table td:first-child { color: #555; padding-left: 0; }
+        table.items { width: 100%; border-collapse: collapse; margin-top: 26px; }
+        table.items th { background: #1f5fa8; color: #fff; text-align: left; padding: 7px 8px; font-weight: bold; }
+        table.items td { border-bottom: 1px solid #d5dde8; padding: 7px 8px; vertical-align: top; }
+        table.items .num { text-align: right; white-space: nowrap; }
+        table.totals { margin: 16px 0 0 auto; border-collapse: collapse; min-width: 300px; }
+        table.totals th { text-align: left; font-weight: normal; padding: 4px 8px; color: #444; }
+        table.totals td { text-align: right; padding: 4px 8px; }
+        table.totals tr.grand th, table.totals tr.grand td { font-weight: bold; font-size: 15px; border-top: 2px solid #1f5fa8; }
+        .payment { margin-top: 30px; padding: 12px 14px; background: #f3f6fa; border-left: 4px solid #1f5fa8; line-height: 1.5; }
+        .small { font-size: 11px; color: #666; margin-top: 28px; }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div><img src="logo.png" alt="Alpine Data Systems logo" style="height: 44px" /></div>
+        <div class="seller">
+            <strong>Alpine Data Systems GmbH</strong><br />
+            Hauptstrasse 12, 10115 Berlin, Germany<br />
+            VAT ID: DE123456789<br />
+            billing@alpine-data.example
+        </div>
+    </div>
+
+    <h1>Invoice F-2026-1017</h1>
+
+    <div class="meta">
+        <div>
+            <h2 style="font-size: 13px; color: #555; margin: 0 0 4px 0;">Bill to</h2>
+            <address>
+                <strong>Muster Handel AG</strong><br />
+                Koenigsallee 5<br />
+                40212 Duesseldorf, Germany<br />
+                VAT ID: DE987654321
+            </address>
+        </div>
+        <table>
+            <tr><td>Invoice date</td><td>October 17, 2026</td></tr>
+            <tr><td>Delivery date</td><td>October 15, 2026</td></tr>
+            <tr><td>Due date</td><td>November 16, 2026</td></tr>
+            <tr><td>Your order</td><td>PO-7781</td></tr>
+        </table>
+    </div>
+
+    <table class="items">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="num">Quantity</th>
+                <th scope="col" class="num">Unit price</th>
+                <th scope="col" class="num">VAT</th>
+                <th scope="col" class="num">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Annual software license (LIC-STD)</td><td class="num">2</td><td class="num">450.00 EUR</td><td class="num">19%</td><td class="num">900.00 EUR</td></tr>
+            <tr><td>2</td><td>Implementation support, hours (SUP-HR)</td><td class="num">6</td><td class="num">85.00 EUR</td><td class="num">19%</td><td class="num">510.00 EUR</td></tr>
+            <tr><td>3</td><td>Training workshop (TRN-WS)</td><td class="num">1</td><td class="num">340.00 EUR</td><td class="num">19%</td><td class="num">340.00 EUR</td></tr>
+        </tbody>
+    </table>
+
+    <table class="totals">
+        <tr><th scope="row">Net amount</th><td>1,750.00 EUR</td></tr>
+        <tr><th scope="row">VAT 19% on 1,750.00 EUR</th><td>332.50 EUR</td></tr>
+        <tr class="grand"><th scope="row">Total due</th><td>2,082.50 EUR</td></tr>
+    </table>
+
+    <div class="payment">
+        Please transfer 2,082.50 EUR by November 16, 2026, quoting the invoice number F-2026-1017.<br />
+        IBAN: DE02 1203 0000 0000 2020 51 &middot; BIC: BYLADEM1001
+    </div>
+
+    <p class="small">This is a ZUGFeRD / Factur-X invoice: the PDF carries the same invoice as structured XML
+        (EN 16931), so the buyer's accounting software can read it without retyping.</p>
+</body>
+</html>

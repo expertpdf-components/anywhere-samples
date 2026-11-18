@@ -1,0 +1,35 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfHtmlElementModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Html Element - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Pdf Html Element Sample for C# ASPNET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "pdf html element, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Html Element - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            HTML content can be added to a pdf document in several ways. If a complex document is created that will contain several types of pdf elements and
+            the html content that will be added is only a small part of the total content, <i>HtmlToPdfElement</i> objects can be used to convert web pages or raw html content and
+            add the conversion result to the pdf document.
+            <br /><br />
+            If the pdf is generated mostly as a result of an html to pdf conversion, the <i>ExpertPdf.PdfConverter</i> object should be used instead.
+            This is described in details in the "Html to Pdf Converter" section of our samples that starts <a href="HtmlToPdfConverter">here</a>.
+            <br /><br />
+            The following sample shows how to use a <i>HtmlToPdfElement</i> object to convert a web page to pdf using ExpertPdf Anywhere.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" asp-for="TxtUrl" style="width:90%" value="https://www.html-to-pdf.net" />
+            <br />
+            <br />
+            <input type="submit" id="BtnCreatePdf" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

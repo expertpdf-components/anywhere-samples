@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.PartialConversionModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Partial Page Conversion with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Partial Page Conversion with Html to Pdf Converter Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "partial page conversion, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Partial Page Conversion with Html to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter can be used to convert only a section of a web page using ExpertPdf Anywhere.
+            <br />
+            <br />
+            The section of the page that will be converted is identified by its element id (every engine) or by a CSS selector
+            (<i>RenderElementSelector</i>, for example <i>#content</i>, <i>.infobox</i> or <i>table.data</i>).
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" value="https://www.html-to-pdf.net" asp-for="TxtUrl" />
+            <br />
+            <br />
+            Render element with ID:<br />
+            <input type="text" style="width: 90%;" value="content" asp-for="TxtElements" />
+            <br />
+            <br />
+            Or render the element matched by the CSS selector:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtSelector" />
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

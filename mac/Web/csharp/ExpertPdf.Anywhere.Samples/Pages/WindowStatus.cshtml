@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.WindowStatusModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Wait until the Page is Ready - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf WindowStatus Sample for C# ASP.NET Core. Convert a page only after its scripts say it is ready.";
+    ViewData["Keywords"] = "window.status, javascript, page ready, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Wait until the Page is Ready - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            Pages that load their content with scripts are not finished when the browser says they are loaded. A page can tell the
+            converter when it is ready by setting <i>window.status</i>: with <i>WindowStatus = "ready"</i> the converter waits until
+            the page sets <i>window.status = "ready"</i> and then converts it. If the page never does, the conversion ends with a
+            navigation timeout.
+        </p>
+        <p>
+            The <a href="~/files/window-status.html" target="_blank">test page</a> builds its report two seconds after it loads. Convert it
+            with and without waiting to see the difference. <i>WindowStatus</i> waits for the page to say it is ready;
+            <i>ConversionDelay</i> is a fixed wait.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+            <br />
+            <br />
+            Wait for window.status to be:<br />
+            <input type="text" style="width: 150px;" asp-for="TxtWindowStatus" /> (leave empty to convert the page as soon as it is loaded)
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,120 @@
+# The ExpertPdf engine: a Deployment, a Service named "expertpdf-engine" (the library's default endpoint,
+# http://expertpdf-engine:8080, for an application in the same namespace) and a PodDisruptionBudget.
+# The token comes from the Secret "expertpdf-engine-token" (key "token"); see README.md. Then:
+#   kubectl -n pdf apply -f engine.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expertpdf-engine
+  labels:
+    app: expertpdf-engine
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: expertpdf-engine
+  template:
+    metadata:
+      labels:
+        app: expertpdf-engine
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1654          # the image's "app" user
+        runAsGroup: 1654
+        fsGroup: 1654
+        seccompProfile:
+          type: RuntimeDefault
+      # The engine reaps Chromium's processes through tini and needs no service account token.
+      automountServiceAccountToken: false
+      # Kubernetes would otherwise give the pod EXPERTPDF_ENGINE_PORT=tcp://<ip>:8080 for the Service named
+      # expertpdf-engine, which the engine reads as its listening port.
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - name: engine
+          image: ghcr.io/expertpdf/engine:22.0
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: EXPERTPDF_ENGINE_PORT
+              value: "8080"
+            # The tokens the engine accepts, one per line (several let a token be rotated without downtime).
+            - name: EXPERTPDF_ENGINE_TOKEN_FILE
+              value: /run/secrets/expertpdf/token
+            # Set "clear" when the engine is shared by different callers, so no conversion is served a
+            # response another caller's conversion fetched.
+            - name: EXPERTPDF_ENGINE_HTTP_CACHE
+              value: all
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+            failureThreshold: 36
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "2"
+              memory: 2Gi
+            limits:
+              memory: 4Gi
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: token
+              mountPath: /run/secrets/expertpdf
+              readOnly: true
+      volumes:
+        - name: tmp
+          emptyDir:
+            medium: Memory
+            sizeLimit: 2Gi
+        - name: token
+          secret:
+            secretName: expertpdf-engine-token
+            items:
+              - key: token
+                path: token
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expertpdf-engine
+spec:
+  type: ClusterIP
+  selector:
+    app: expertpdf-engine
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: expertpdf-engine
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: expertpdf-engine

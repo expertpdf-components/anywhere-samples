@@ -1,0 +1,30 @@
+@page
+@model ExpertPdf.Samples.Pages.RepeatTableHeaderModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Repeat the Table Header on Each Page - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Repeat Table Header Sample for C# ASP.NET Core. The thead of a long HTML table is repeated on every PDF page.";
+    ViewData["Keywords"] = "repeat table header, thead, page breaks, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Repeat the Table Header on Each Page - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            When a table spans several PDF pages, its header can be repeated at the top of every page: put the header rows in a
+            <i>thead</i> element styled with <i>display: table-header-group</i>. The header is repeated
+            with the print CSS media type, the way browsers do when they print.
+        </p>
+        <p>
+            Table page (<a href="~/files/table/table_with_repeated_head.html" target="_blank">view it</a>):<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

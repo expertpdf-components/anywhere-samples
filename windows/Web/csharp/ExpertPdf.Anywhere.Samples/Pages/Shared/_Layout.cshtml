@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#07182c" media="(prefers-color-scheme: dark)" />
+    <script>(function () { try { var t = localStorage.getItem('expertpdf-theme-v2'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) { } })();</script>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="~/assets/expertpdf-icon.svg" />
+    <script src="~/assets/site.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="https://www.html-to-pdf.net/" class="brand" aria-label="ExpertPdf home">
+          <span class="brand-mark" aria-hidden="true"><span>PDF</span></span>
+          <span class="wm" aria-hidden="true"><span class="br">&lt;</span><span class="name-a">Expert</span><span class="name-b">Pdf</span><span class="br">/&gt;</span></span>
+        </a>
+        <nav class="nav-links" id="site-nav" aria-label="Main">
+          <a href="https://www.html-to-pdf.net/expertpdf-anywhere/" class="nav-link nav-any" aria-current="false">Anywhere<span class="nav-new">New</span></a>
+          <div class="nav-item has-sub">
+            <a href="https://www.html-to-pdf.net/html-to-pdf-converter/" class="nav-link" aria-current="false">Converter</a>
+            <button class="nav-caret" type="button" aria-label="Open the Converter menu" aria-expanded="false" aria-controls="sub-converter"><svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="sub-menu" id="sub-converter">
+              <a href="https://www.html-to-pdf.net/html-to-pdf-converter/#features" class="sub-link">Features<span class="sub-desc">Input, layout, output and rendering</span></a>
+              <a href="https://www.html-to-pdf.net/html-to-pdf-converter/#code" class="sub-link">Code samples<span class="sub-desc">C#, VB.NET, ASP.NET MVC</span></a>
+              <a href="https://docs.html-to-pdf.net/html-to-pdf-library/html/Index.htm" class="sub-link">Documentation<span class="sub-desc">Developer guide and API reference</span></a>
+              <a href="https://samples.html-to-pdf.net/html-to-pdf/" class="sub-link">Online samples<span class="sub-desc">Every feature, live in ASP.NET Core</span></a>
+              <a href="https://www.html-to-pdf.net/html-to-pdf-converter/version-history/" class="sub-link">Version history</a>
+              <a href="https://www.html-to-pdf.net/free-html-to-pdf-converter/" class="sub-link">Free online converter<span class="sub-desc">HTML to PDF in your browser</span></a>
+            </div>
+          </div>
+          <div class="nav-item has-sub">
+            <a href="https://www.html-to-pdf.net/pdf-library/" class="nav-link" aria-current="false">Products</a>
+            <button class="nav-caret" type="button" aria-label="Open the Products menu" aria-expanded="false" aria-controls="sub-products"><svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="sub-menu sub-menu-mega" id="sub-products">
+              <a href="https://www.html-to-pdf.net/expertpdf-anywhere/" class="mega-any"><span class="mega-any-name">ExpertPdf Anywhere<span class="mega-tag">New</span></span><span class="mega-any-desc">Every tool in one library · Windows, Linux, macOS</span></a>
+              <p class="mega-classic">Classic components</p>
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <p class="mega-head">Conversion</p>
+                  <a href="https://www.html-to-pdf.net/html-to-pdf-converter/" class="mega-link is-flag">HTML to PDF</a>
+                  <a href="https://www.html-to-pdf.net/html-to-image-converter/" class="mega-link">HTML to Image</a>
+                  <a href="https://www.html-to-pdf.net/rtf-to-pdf/" class="mega-link">RTF to PDF</a>
+                </div>
+                <div class="mega-col">
+                  <p class="mega-head">Generation &amp; extraction</p>
+                  <a href="https://www.html-to-pdf.net/pdf-creator/" class="mega-link">PDF Creator</a>
+                  <a href="https://www.html-to-pdf.net/pdf-to-text/" class="mega-link">PDF to Text</a>
+                  <a href="https://www.html-to-pdf.net/pdf-to-image/" class="mega-link">PDF to Image</a>
+                  <a href="https://www.html-to-pdf.net/pdf-images-extractor/" class="mega-link">PDF Images Extractor</a>
+                </div>
+                <div class="mega-col">
+                  <p class="mega-head">Manipulation &amp; security</p>
+                  <a href="https://www.html-to-pdf.net/pdf-merge/" class="mega-link">PDF Merge</a>
+                  <a href="https://www.html-to-pdf.net/pdf-split/" class="mega-link">PDF Split</a>
+                  <a href="https://www.html-to-pdf.net/pdf-viewer/" class="mega-link">PDF Viewer</a>
+                  <a href="https://www.html-to-pdf.net/pdf-security/" class="mega-link">PDF Security</a>
+                  <a href="https://www.html-to-pdf.net/excel-library/" class="mega-link">ExpertXLS<span class="mega-tag">Excel</span></a>
+                </div>
+              </div>
+              <div class="mega-foot">
+                <a href="https://www.html-to-pdf.net/pdf-library/#components">All components<svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="https://www.html-to-pdf.net/pdf-library/#bundles">Toolkit bundles<svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="https://www.html-to-pdf.net/support/#docs">Docs and online samples<svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.html-to-pdf.net/free-online-pdf-converter/" class="nav-link" aria-current="false">Online converter</a>
+          <a href="https://www.html-to-pdf.net/pricing/" class="nav-link" aria-current="false">Pricing</a>
+          <a href="https://www.html-to-pdf.net/support/" class="nav-link" aria-current="false">Support</a>
+        </nav>
+        <div class="nav-right">
+          <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 1 12 20 Z" fill="currentColor"/></svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4 A8 8 0 0 0 12 20 Z" fill="currentColor"/></svg>
+          </button>
+          <a href="https://www.html-to-pdf.net/downloads/" class="btn btn-ghost btn-sm">Download</a>
+          <a href="https://www.html-to-pdf.net/pricing/" class="btn btn-primary btn-sm">Buy now</a>
+          <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="sample-bar">
+        <div class="container">
+            <a class="sample-bar-title" href="~/">ExpertPdf Anywhere <span class="tag">ASP.NET Core samples &middot; .NET 10 and .NET 11</span></a>
+        </div>
+    </div>
+    <main id="main" class="sample" tabindex="-1">
+        <div class="container sample-layout">
+            <aside class="sample-rail" aria-label="Samples">
+                <input type="checkbox" id="rail-toggle" class="rail-toggle-input" />
+                <label for="rail-toggle" class="rail-toggle">All samples <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></label>
+                <nav class="rail-list">
+                    <a href="~/" class="rail-home">Samples home</a>
+                    <p class="rail-head">Html to Pdf Converter</p>
+                    <ul>
+                        <li><a href="~/HtmlToPdfConverter" title="ExpertPdf Anywhere - Html to Pdf Converter">Getting Started</a></li>
+                        <li><a href="~/ConvertUrlToPdf" title="ExpertPdf Anywhere - Convert from url to pdf">Convert Url to Pdf</a></li>
+                        <li><a href="~/ConvertHtmlCodeToPdf" title="ExpertPdf Anywhere - Convert from html code to pdf">Convert Html Code to Pdf</a></li>
+                        <li><a href="~/PdfConverterProperties" title="ExpertPdf Anywhere - Setting Document Properties with Html to Pdf Converter">Pdf Document Properties</a></li>
+                        <li><a href="~/PdfConverterViewerPreferences" title="ExpertPdf Anywhere - Setting Pdf Viewer Preferences for the Html to Pdf Converter">Pdf Viewer Preferences</a></li>
+                        <li><a href="~/PdfConverterSecurity" title="ExpertPdf Anywhere - Setting Pdf Document Security with the Html to Pdf Converter">Pdf Security Settings</a></li>
+                        <li><a href="~/ConvertMultipleUrlsToPdf" title="ExpertPdf Anywhere - Convert Multiple Urls into the same Pdf Document">Multiple Urls to one Pdf Document</a></li>
+                        <li><a href="~/ConversionDelay" title="ExpertPdf Anywhere - Conversion Delay with Html to Pdf Converter">Conversion Delay</a></li>
+                        <li><a href="~/HtmlToPdfHeadersAndFooters" title="ExpertPdf Anywhere - Pdf Headers and Footers with Html to Pdf Converter">Headers and Footers</a></li>
+                        <li><a href="~/PageBreaks" title="ExpertPdf Anywhere - Control Page Breaks with Html to Pdf Converter">Page Breaks</a></li>
+                        <li><a href="~/AutomaticBookmarks" title="ExpertPdf Anywhere - Automatic Bookmarks with Html to Pdf Converter">Automatic Bookmarks</a></li>
+                        <li><a href="~/HttpHeaders" title="ExpertPdf Anywhere - Set HTTP Headers with Html to Pdf Converter">HTTP Headers</a></li>
+                        <li><a href="~/HttpCookies" title="ExpertPdf Anywhere - Set HTTP Cookies with Html to Pdf Converter">HTTP Cookies</a></li>
+                        <li><a href="~/ConvertFromJs" title="ExpertPdf Anywhere - Start html to pdf conversion with a javascript call">Start Conversion from Javascript</a></li>
+                        <li><a href="~/MediaTypes" title="ExpertPdf Anywhere - Use media types with Html to Pdf Converter">Media Types</a></li>
+                        <li><a href="~/HtmlToPdfConverterLinks" title="ExpertPdf Anywhere - Pdf Internal and External Links - Html to Pdf Converter">Internal and External Links</a></li>
+                        <li><a href="~/PartialConversion" title="ExpertPdf Anywhere - Convert a Specific Section from the Web Page to Pdf">Partial Page Conversion</a></li>
+                        <li><a href="~/ExcludeFromConversion" title="ExpertPdf Anywhere - Exclude Specific Sections from the Web Page when Converted to Pdf">Exclude Elements from Conversion</a></li>
+                        <li><a href="~/CurrentWebPageToPdf" title="ExpertPdf Anywhere - Convert Current WebPage to Pdf">Current WebPage to Pdf in Asp.Net</a></li>
+                        <li><a href="~/ConvertAndEmail" title="ExpertPdf Anywhere - Convert WebPage to Pdf and Email as Attachment">Convert to Pdf and Email as Attachment</a></li>
+                        <li><a href="~/WebElementsLocation" title="ExpertPdf Anywhere - Get Web Elements Location in PDF">Get Web Elements Location in PDF</a></li>
+                        <li><a href="~/TableOfContents" title="ExpertPdf Anywhere - Generate Table of Contents">Generate Table of Contents</a></li>
+                        <li><a href="~/HttpPost" title="ExpertPdf Anywhere - Send HTTP POST data with the Html to Pdf Converter">HTTP POST Data</a></li>
+                        <li><a href="~/WindowStatus" title="ExpertPdf Anywhere - Wait until the page is ready">Wait until the Page is Ready</a></li>
+                        <li><a href="~/RepeatTableHeader" title="ExpertPdf Anywhere - Repeat the table header on each page">Repeat Table Header on Each Page</a></li>
+                        <li><a href="~/AutomaticTableOfContents" title="ExpertPdf Anywhere - Automatic Table of Contents">Automatic Table of Contents</a></li>
+                        <li><a href="~/HtmlFormsToPdfFields" title="ExpertPdf Anywhere - Html Forms to Pdf Form Fields">Html Forms to Pdf Form Fields</a></li>
+                        <li><a href="~/AsyncConversion" title="ExpertPdf Anywhere - Asynchronous Conversion">Asynchronous Conversion</a></li>
+                    </ul>
+                    <p class="rail-head">Html to Image Converter</p>
+                    <ul>
+                        <li><a href="~/ConvertUrlToImage" title="ExpertPdf Anywhere - Convert from url to image">Convert Url to Image</a></li>
+                        <li><a href="~/ConvertHtmlCodeToImage" title="ExpertPdf Anywhere - Convert from html code to image">Convert Html Code to Image</a></li>
+                    </ul>
+                    <p class="rail-head">Word and Rtf to Pdf</p>
+                    <ul>
+                        <li><a href="~/ConvertWordToPdf" title="ExpertPdf Anywhere - Word to Pdf">Word to Pdf</a></li>
+                        <li><a href="~/ConvertRtfToPdf" title="ExpertPdf Anywhere - Rtf to Pdf">Rtf to Pdf</a></li>
+                    </ul>
+                    <p class="rail-head">Excel and PowerPoint to Pdf</p>
+                    <ul>
+                        <li><a href="~/ConvertExcelToPdf" title="ExpertPdf Anywhere - Excel to Pdf">Excel to Pdf</a></li>
+                        <li><a href="~/ConvertPowerPointToPdf" title="ExpertPdf Anywhere - PowerPoint to Pdf">PowerPoint to Pdf</a></li>
+                    </ul>
+                    <p class="rail-head">Accessible PDF, PDF/A, E-Invoices</p>
+                    <ul>
+                        <li><a href="~/TaggedPdf" title="ExpertPdf Anywhere - Tagged (accessible) PDF">Tagged (Accessible) PDF</a></li>
+                        <li><a href="~/PdfStandards" title="ExpertPdf Anywhere - PDF/A documents">PDF/A Documents</a></li>
+                        <li><a href="~/ZugferdInvoice" title="ExpertPdf Anywhere - ZUGFeRD / Factur-X electronic invoice">ZUGFeRD / Factur-X Invoice</a></li>
+                        <li><a href="~/AccessiblePdf" title="ExpertPdf Anywhere - Accessible PDF (PDF/UA)">Accessible PDF (PDF/UA)</a></li>
+                    </ul>
+                    <p class="rail-head">Pdf Library</p>
+                    <ul>
+                        <li><a href="~/GettingStarted" title="Getting Started with ExpertPdf Anywhere">Getting Started</a></li>
+                        <li><a href="~/DocumentProperties" title="Document Properties Settings - ExpertPdf Anywhere">Document Properties</a></li>
+                        <li><a href="~/PdfViewerPreferences" title="Pdf Viewer Settings - ExpertPdf Anywhere">Pdf Viewer Preferences</a></li>
+                        <li><a href="~/PageSettings" title="Pdf Page Settings - ExpertPdf Anywhere">Pdf Page Settings</a></li>
+                        <li><a href="~/PdfElementsPositions" title="Pdf Elements Rendering Positions - ExpertPdf Anywhere">Pdf Elements Rendering Positions</a></li>
+                        <li><a href="~/PdfTextElement" title="Pdf Text Element Properties - ExpertPdf Anywhere">Pdf Text Element Properties</a></li>
+                        <li><a href="~/PdfImageElement" title="Pdf Image Element Properties - ExpertPdf Anywhere">Pdf Image Element Properties</a></li>
+                        <li><a href="~/PdfHtmlElement" title="Pdf Html Element Properties - ExpertPdf Anywhere">Pdf Html Element</a></li>
+                        <li><a href="~/GraphicElements" title="Pdf Graphic Elements - ExpertPdf Anywhere">Pdf Graphic Elements</a></li>
+                        <li><a href="~/PdfLinks" title="Pdf Internal and External Links - ExpertPdf Anywhere">Pdf Links</a></li>
+                        <li><a href="~/PdfBookmarks" title="Pdf Bookmarks - ExpertPdf Anywhere">Pdf Bookmarks</a></li>
+                        <li><a href="~/PdfTemplates" title="ExpertPdf Anywhere - Pdf Templates">Pdf Templates</a></li>
+                        <li><a href="~/HeadersAndFooters" title="ExpertPdf Anywhere - Pdf Document Headers and Footers">Headers and Footers</a></li>
+                        <li><a href="~/PdfStamps" title="ExpertPdf Anywhere - Pdf Stamps">Pdf Stamps</a></li>
+                        <li><a href="~/PdfWatermarks" title="ExpertPdf Anywhere - Pdf Watermarks">Pdf Watermarks</a></li>
+                        <li><a href="~/PageNumbering" title="ExpertPdf Anywhere - Page Numbering">Page Numbering</a></li>
+                        <li><a href="~/PdfMerge" title="ExpertPdf Anywhere - Pdf Merge">Pdf Merge</a></li>
+                        <li><a href="~/PdfSplit" title="ExpertPdf Anywhere - Pdf Split">Pdf Split</a></li>
+                        <li><a href="~/DigitalSignatures" title="ExpertPdf Anywhere - Digital Signatures">Digital Signatures</a></li>
+                        <li><a href="~/ModifyExistingPdf" title="ExpertPdf Anywhere - Modify Existing Pdf Documents">Modify Existing Pdf</a></li>
+                        <li><a href="~/PdfCompression" title="ExpertPdf Anywhere - Pdf Compression">Pdf Compression</a></li>
+                    </ul>
+                    <p class="rail-head">Existing Pdf Documents</p>
+                    <ul>
+                        <li><a href="~/PdfSecurity" title="ExpertPdf Anywhere - Pdf Security">Pdf Security</a></li>
+                        <li><a href="~/PdfFormFilling" title="ExpertPdf Anywhere - Pdf Form Filling">Pdf Form Filling</a></li>
+                        <li><a href="~/PdfRedaction" title="ExpertPdf Anywhere - Pdf Redaction">Pdf Redaction</a></li>
+                        <li><a href="~/PdfResize" title="ExpertPdf Anywhere - Pdf Resize">Pdf Resize</a></li>
+                        <li><a href="~/PdfPortfolio" title="ExpertPdf Anywhere - Pdf Portfolio">Pdf Portfolio</a></li>
+                        <li><a href="~/SignAndValidate" title="ExpertPdf Anywhere - Sign and Validate Pdf">Sign and Validate Pdf</a></li>
+                    </ul>
+                    <p class="rail-head">Pdf Tools</p>
+                    <ul>
+                        <li><a href="~/PdfToTextConverter" title="ExpertPdf Anywhere - Pdf To Text">Pdf To Text</a></li>
+                        <li><a href="~/SearchPdfText" title="ExpertPdf Anywhere - Search Text in Pdf">Search Text in Pdf</a></li>
+                        <li><a href="~/PdfToImageConverter" title="ExpertPdf Anywhere - Pdf To Image">Pdf To Image</a></li>
+                        <li><a href="~/PdfImageExtract" title="ExpertPdf Anywhere - Extract Images from Pdf">Extract Images from Pdf</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="sample-card">
+                <form method="post">
+                    @RenderBody()
+                </form>
+                @if (Context.Request.Path.Value.Contains("Index") || (Context.Request.Path.Value.Length == 1))
+                {
+                    // do not display code in this case
+                }
+                else
+                {
+                    try
+                    {
+                        // the code of the page model, shown below the sample
+                        string code = System.IO.File.ReadAllText(System.IO.Path.Combine(Startup.ServerPath, "Pages", this.ViewContext.RouteData.Values["page"].ToString().TrimStart('/') + ".cshtml.cs"));
+                        ViewData.Add("Data", code);
+                    }
+                    catch { }
+                }
+
+                @if (ViewData["Data"] != null && ViewData["Data"].ToString().Length > 0)
+                {
+                    <h2>Sample Code C#</h2>
+                    <pre class="code">@ViewData["Data"]</pre>
+                }
+            </div>
+        </div>
+    </main>
+    <footer class="foot-slim">
+      <div class="container">
+        <div class="foot-slim-row">
+          <div class="foot-brand">
+            <a href="https://www.html-to-pdf.net/" class="brand" aria-label="ExpertPdf home">
+              <span class="brand-mark" aria-hidden="true"><span>PDF</span></span>
+              <span class="wm" aria-hidden="true"><span class="br">&lt;</span><span class="name-a">Expert</span><span class="name-b">Pdf</span><span class="br">/&gt;</span></span>
+            </a>
+            <p>HTML to PDF Converter and PDF components for .NET, by Outside Software SRL since 2007.</p>
+            <div class="foot-social">
+              <a href="https://twitter.com/expertpdf" aria-label="ExpertPdf on X" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h3l-7.5 8.6L22 22h-6.9l-5.4-7L3.5 22H1l8-9.2L1 2h7.1l4.9 6.5L18 2zm-1.2 18h1.7L7.3 4H5.5l11.3 16z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/expertpdf" aria-label="ExpertPdf on LinkedIn" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h4v16H4zM6 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM10 8h4v2.3c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.7V20h-4v-4.7c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.4-2 2.7V20h-4V8z"/></svg>
+              </a>
+              <a href="https://www.nuget.org/profiles/expertpdf" aria-label="ExpertPdf on NuGet" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="16" r="3"/><circle cx="17" cy="8" r="3"/><path d="M11 11l3-3"/></svg>
+              </a>
+            </div>
+          </div>
+          <ul class="foot-slim-links">
+            <li><a href="https://www.html-to-pdf.net/about/">About us</a></li>
+            <li><a href="https://www.html-to-pdf.net/customers/">Customers</a></li>
+            <li><a href="https://www.html-to-pdf.net/support/">Support</a></li>
+            <li><a href="https://www.html-to-pdf.net/pricing/">Pricing</a></li>
+            <li><a href="https://www.html-to-pdf.net/eula/">License agreement</a></li>
+            <li><a href="https://www.html-to-pdf.net/privacy-policy/">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="foot-bottom">
+          <span>&copy; 2007&ndash;@DateTime.Now.Year Outside Software SRL. ExpertPdf is a product of Outside Software SRL.</span>
+          <span>HTML to PDF Converter for .NET</span>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

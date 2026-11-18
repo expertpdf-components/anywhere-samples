@@ -1,0 +1,34 @@
+# ExpertPdf Anywhere - an application and the expertpdf/engine container. From this folder:
+#
+#   export EXPERTPDF_ENGINE_TOKEN=$(openssl rand -base64 32)      (or put it in a .env file here)
+#   docker compose up --build
+#   # then open http://localhost:8080/convert?url=https://www.html-to-pdf.net
+#
+# The engine is reachable only from the compose network; the application is published on 8080.
+services:
+  expertpdf-engine:
+    # The service name is the library's default endpoint: http://expertpdf-engine:8080.
+    image: ${EXPERTPDF_ENGINE_IMAGE:-ghcr.io/expertpdf/engine:22.0}
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      EXPERTPDF_ENGINE_TOKEN: ${EXPERTPDF_ENGINE_TOKEN:?set EXPERTPDF_ENGINE_TOKEN - e.g. openssl rand -base64 32}
+      # A shared engine should not keep the HTTP cache between different callers' conversions:
+      # EXPERTPDF_ENGINE_HTTP_CACHE: clear
+    # Eight light pages at once peak at about 500 MB; heavy pages (news sites, long reports) need more.
+    mem_limit: 4g
+
+  app:
+    build:
+      context: ../..                    # the samples folder
+      dockerfile: docker/remote-engine/Dockerfile
+    image: expertpdf-anywhere:remote-engine-app
+    ports:
+      - "8080:8080"
+    environment:
+      EXPERTPDF_RENDERING_ENGINE: ChromiumRemote
+      EXPERTPDF_ENGINE_TOKEN: ${EXPERTPDF_ENGINE_TOKEN}
+    depends_on:
+      expertpdf-engine:
+        condition: service_healthy      # the engine reports healthy once it is ready to convert

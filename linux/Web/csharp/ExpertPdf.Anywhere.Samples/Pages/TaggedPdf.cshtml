@@ -1,0 +1,42 @@
+@page
+@model ExpertPdf.Samples.Pages.TaggedPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Tagged (Accessible) PDF - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Tagged (Accessible) PDF Sample for C# ASP.NET Core. Convert HTML to PDF/UA tagged PDF.";
+    ViewData["Keywords"] = "tagged pdf, accessible pdf, pdf/ua, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Tagged (Accessible) PDF - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample converts a web page to a tagged PDF. A tagged PDF keeps the logical structure of the page: the headings,
+            paragraphs, lists, tables, the images with their alternate text, the links and the reading order. Screen readers and other
+            assistive technologies use this structure, and it is what the PDF/UA accessibility standard requires.
+        </p>
+        <p>
+            The structure comes from the HTML, so semantic HTML (real headings, lists, table headers, alt text on images and a
+            <i>lang</i> attribute) gives the best result.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+            <br />
+            <br />
+            Document title:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtTitle" />
+            <br />
+            <br />
+            Language:<br />
+            <input type="text" style="width: 100px;" asp-for="TxtLanguage" />
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

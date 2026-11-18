@@ -1,0 +1,53 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertUrlToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Convert from Url to Pdf - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Convert from Url to Pdf Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "convert from url to pdf, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Convert from Url to Pdf - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to use ExpertPdf html to pdf converter to convert an url to pdf, also setting a few properties.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" value="https://www.html-to-pdf.net" asp-for="TxtUrl" />
+            <br /><br />
+        </p>
+        <div class="col2">
+            Pdf Page Size:<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select>
+            <br />
+            <br />
+            Pdf Page Orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select><br />
+            <br />
+        </div>
+        <div class="col2">
+            Web Page Width:<br />
+            <input type="text" style="width: 50px;" value="1024" asp-for="TxtWidth" /> px<br />
+            <br />
+            Web Page Height:<br />
+            <input type="text" style="width: 50px;" value="" asp-for="TxtHeight" /> px<br />
+            (leave empty to auto detect)<br />
+            <br />
+            Page ranges:<br />
+            <input type="text" style="width: 100px;" asp-for="TxtPageRanges" /><br />
+            (for example 1-2,4; empty for all the pages)<br />
+            <br />
+
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,51 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfSecurityModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Security - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Security Sample for C# and ASP.NET Core. Encrypt an existing PDF document with passwords and permissions.";
+    ViewData["Keywords"] = "pdf security, encrypt pdf, pdf password, pdf permissions, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Security - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to protect an existing PDF document with the PDF security manager of ExpertPdf Anywhere:
+            a user password to open it, an owner password to change it, the permissions granted to whoever opens it with
+            the user password, and the encryption algorithm.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/doc2.pdf" target="_blank">doc2.pdf</a>
+        </p>
+        <div class="col2">
+            User password:<br />
+            <input type="text" asp-for="TxtUserPassword" style="width: 150px;" /><br />
+            <br />
+            Owner password:<br />
+            <input type="text" asp-for="TxtOwnerPassword" style="width: 150px;" /><br />
+            <br />
+            Encryption:<br />
+            <select asp-for="DdlEncryption" asp-items="Model.Encryptions"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkEncryptMetadata" /> Encrypt the XMP metadata
+        </div>
+        <div class="col2">
+            <input type="checkbox" asp-for="ChkCanPrint" /> Can print<br />
+            <input type="checkbox" asp-for="ChkCanFullQualityPrint" /> Can print in full quality<br />
+            <input type="checkbox" asp-for="ChkCanCopyContent" /> Can copy content<br />
+            <input type="checkbox" asp-for="ChkCanEditContent" /> Can edit content<br />
+            <input type="checkbox" asp-for="ChkCanEditAnnotations" /> Can edit annotations<br />
+            <input type="checkbox" asp-for="ChkCanFillFormFields" /> Can fill form fields<br />
+            <input type="checkbox" asp-for="ChkCanAssembleDocument" /> Can assemble the document<br />
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnSecure" value="Secure PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

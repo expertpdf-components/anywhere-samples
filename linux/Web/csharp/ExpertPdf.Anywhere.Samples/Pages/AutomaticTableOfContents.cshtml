@@ -1,0 +1,33 @@
+@page
+@model ExpertPdf.Samples.Pages.AutomaticTableOfContentsModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Automatic Table of Contents - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Automatic Table of Contents Sample for C# and ASP.NET Core. A table of contents with page numbers, built by the converter.";
+    ViewData["Keywords"] = "pdf table of contents, toc page numbers, html to pdf, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Automatic Table of Contents - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter of ExpertPdf Anywhere builds a table of contents with page
+            numbers. It can number the page's own table of contents, write one into the page from its headings, or draw one
+            on pages of its own. Every entry is a link to its heading.
+            <br />
+            <br />
+            The sample converts this page: <a href="files/document2.html" target="_blank">document2.html</a>
+        </p>
+        <p>
+            Table of contents:<br />
+            <select asp-for="DdlMode" asp-items="Model.Modes"></select>
+        </p>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

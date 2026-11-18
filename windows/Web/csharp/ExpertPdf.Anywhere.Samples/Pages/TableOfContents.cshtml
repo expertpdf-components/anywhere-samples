@@ -1,0 +1,48 @@
+@page
+@model ExpertPdf.Samples.Pages.TableOfContentsModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Generate Table of Contents with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Generate Table of Contents with Html to Pdf Converter Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "table of contents, toc, pdf, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Generate Table of Contents with Html to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter can generate page numbers for a table of contents using ExpertPdf Anywhere.
+            The table of contents (TOC) must already exist at the top of the web page and the items from the table of contents must link to the appropriate sections from the document
+            (like in the test document below). The TOC elements must also have the following CSS classes or ID styles:
+            <br />
+            <br />
+            - all TOC elements (both titles from the actual table of contents, but also the link targets - where the user goes when clicking on a TOC link)
+            must have a specific CSS class ("toc" in our example).
+            <br />
+            - all TOC titles must have similar IDs: TOC_Title{0} (<i>TOC_Title1</i> to <i>TOC_Title13</i> in our example).
+            <br />
+            - all TOC targets (document content) must have similar IDs: TOC_Target{0} (<i>TOC_Target1</i> to <i>TOC_Target13</i> in our example).
+            <br />
+            <br />
+            All these elements locations are retrieved during the conversion to PDF and those locations are used to get the content page numbers to display them in the
+            table of contents. The font for the page numbers can be specified in code. Also, that style of the line that links the TOC titles with the page numbers.
+            <br />
+            <br />
+            <a href="/files/document2.html" target="_blank">Test document</a>
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" asp-for="TxtUrl" style="width:90%" />
+            <br />
+            <br />
+            <label><input type="checkbox" asp-for="CbGeneratedToc" /> Also add a generated table of contents page at the start (TableOfContents, page labels)</label>
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

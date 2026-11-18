@@ -1,0 +1,41 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfToTextConverterModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf To Text Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf To Text Converter Sample for C# and ASP.NET Core. Extract the text of a PDF document on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "pdf to text, extract text from pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf To Text Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to extract the text of a PDF document with the PDF to Text converter of ExpertPdf Anywhere.
+            The text can be extracted keeping the layout of the page or in reading order, from all the pages or a range of
+            pages.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/expertpdf.pdf" target="_blank">expertpdf.pdf</a>
+        </p>
+        <p>
+            Start page (1 for the first page):<br />
+            <input type="text" asp-for="TxtStartPage" style="width: 50px;" /><br />
+            <br />
+            End page (0 for the last page):<br />
+            <input type="text" asp-for="TxtEndPage" style="width: 50px;" /><br />
+            <br />
+            Layout:<br />
+            <select asp-for="DdlLayout" asp-items="Model.Layouts"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkMarkPageBreaks" /> Mark the page breaks
+        </p>
+        <p>
+            <input type="submit" id="BtnExtract" value="Extract Text" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

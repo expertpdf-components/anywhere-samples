@@ -1,0 +1,45 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertRtfToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Rtf to Pdf Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Rtf to Pdf Converter Sample for C# and ASP.NET Core. Convert RTF documents to PDF on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "rtf to pdf, convert rtf to pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Rtf to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert an RTF document to PDF with the RTF to PDF converter of ExpertPdf Anywhere,
+            with the page size, orientation and margins of your choice and a header and footer on every page.
+            <br />
+            <br />
+            The sample converts this RTF document: <a href="files/sample.rtf" target="_blank">sample.rtf</a>
+        </p>
+        <div class="col2">
+            Page size:<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select><br />
+            <br />
+            Page orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select><br />
+            <br />
+            Margins (points):<br />
+            <input type="text" asp-for="TxtMargin" style="width: 50px;" />
+        </div>
+        <div class="col2">
+            Footer text:<br />
+            <input type="text" asp-for="TxtFooterText" style="width: 200px;" /><br />
+            <br />
+            <input type="checkbox" asp-for="ChkPageNumbers" /> Page numbers in the footer
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

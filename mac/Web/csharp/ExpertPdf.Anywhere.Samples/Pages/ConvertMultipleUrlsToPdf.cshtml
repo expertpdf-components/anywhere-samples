@@ -1,0 +1,31 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertMultipleUrlsToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Convert Multiple Urls into the same Pdf Document - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Convert Multiple Urls into the same Pdf Document Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "multiple urls to same pdf, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Convert Multiple Urls into the same Pdf Document - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert 3 different urls to the same pdf document using ExpertPdf Anywhere.
+        </p>
+        <p>
+            Url 1:&nbsp;<input type="text" style="width: 90%;" value="https://www.html-to-pdf.net" asp-for="TxtUrl1" />
+            <br /><br />
+            Url 2:&nbsp;<input type="text" style="width: 90%;" value="https://www.google.com" asp-for="TxtUrl2" />
+            <br /><br />
+            Url 3:&nbsp;<input type="text" style="width: 90%;" value="https://www.nuget.org" asp-for="TxtUrl3" />
+            <br /><br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

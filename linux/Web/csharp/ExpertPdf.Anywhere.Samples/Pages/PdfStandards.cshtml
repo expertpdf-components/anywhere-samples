@@ -1,0 +1,42 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfStandardsModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - PDF/A Documents - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf PDF/A Sample for C# ASP.NET Core. Convert HTML to every PDF/A level, from PDF/A-1b to PDF/A-4.";
+    ViewData["Keywords"] = "pdf/a, pdf/a-3, associated files, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - PDF/A Documents - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample converts a web page to a PDF/A document. PDF/A is the ISO standard for long-term archiving: the fonts and the
+            color profile are embedded and nothing depends on the outside world, so the document looks the same in many years.
+        </p>
+        <p>
+            The <b>b</b> levels (PDF/A-1b, 2b, 3b) guarantee the appearance; the <b>u</b> levels (2u, 3u) also guarantee that the
+            text can be extracted as Unicode; the <b>a</b> levels (1a, 2a, 3a) are also tagged (accessible). <b>PDF/A-4</b> is
+            built on PDF 2.0; PDF/A-4e is its engineering variant and PDF/A-4f allows any embedded file.
+            PDF/A-3 documents can carry associated files: this sample can embed the converted HTML page in the PDF.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+            <br />
+            <br />
+            PDF standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select>
+            <br />
+            <br />
+            <input type="checkbox" asp-for="CbAttachSource" /> Embed the HTML page as an associated file (PDF/A-3)
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfToImageConverterModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf To Image Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf To Image Converter Sample for C# and ASP.NET Core. Render the pages of a PDF document as images.";
+    ViewData["Keywords"] = "pdf to image, pdf to png, pdf to jpg, rasterize pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf To Image Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to render a page of a PDF document as an image with the PDF to Image converter of
+            ExpertPdf Anywhere, at the resolution and in the format and color space of your choice.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/expertpdf.pdf" target="_blank">expertpdf.pdf</a>
+        </p>
+        <p>
+            Page number:<br />
+            <input type="text" asp-for="TxtPage" style="width: 50px;" /><br />
+            <br />
+            Resolution (dots per inch):<br />
+            <input type="text" asp-for="TxtResolution" style="width: 50px;" /><br />
+            <br />
+            Image format:<br />
+            <select asp-for="DdlImageFormat" asp-items="Model.ImageFormats"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkGray" /> Gray scale
+        </p>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create Image" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

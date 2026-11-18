@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.AccessiblePdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Accessible PDF (PDF/UA) - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Accessible PDF Sample for C# and ASP.NET Core. Convert a web page to PDF/UA-1 or PDF/UA-2, alone or with PDF/A.";
+    ViewData["Keywords"] = "pdf/ua, pdf/ua-2, accessible pdf, tagged pdf, pdf/a-4, html to pdf, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Accessible PDF (PDF/UA) - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a web page to an accessible PDF document that declares PDF/UA-1 or PDF/UA-2,
+            the accessibility standards. The document is tagged: it keeps the logical structure of the page (headings,
+            paragraphs, lists, tables, figures with their alternate text) and its reading order. PDF/UA-1 combines with
+            PDF/A-2 and PDF/A-3, PDF/UA-2 with PDF/A-4. An accessible document needs a title and a language.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" asp-for="TxtUrl" style="width: 90%;" /><br />
+            <br />
+            Standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select><br />
+            <br />
+            Title:<br />
+            <input type="text" asp-for="TxtTitle" style="width: 300px;" /><br />
+            <br />
+            Language:<br />
+            <input type="text" asp-for="TxtLanguage" style="width: 80px;" />
+        </p>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

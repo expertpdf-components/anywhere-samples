@@ -1,0 +1,23 @@
+﻿@page
+@model ExpertPdf.Samples.Pages.ViewHttpHeadersModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Helper Page - View HTTP Headers - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Helper Page - View HTTP Headers. C# / ASP.NET Core 10 Sample. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "http headers, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Helper Page - View HTTP Headers - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This page shows the HTTP Headers sent to it:
+            <br />
+            @Html.Raw(ViewData["HeadersValue"])
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

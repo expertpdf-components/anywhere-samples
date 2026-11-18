@@ -1,0 +1,47 @@
+@page
+@model ExpertPdf.Samples.Pages.SignAndValidateModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Sign and Validate Pdf - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Sign and Validate Sample for C# and ASP.NET Core. Sign an existing PDF document and check its signatures.";
+    ViewData["Keywords"] = "sign pdf, pdf digital signature, validate pdf signature, sha-256, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Sign and Validate Pdf - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to sign an existing PDF document with the PDF security manager of ExpertPdf Anywhere,
+            with a visible signature that shows the signer, the reason, the place and the date over an optional background
+            image, and how to check the signatures of a document: whether it was changed after it was signed, who signed
+            it, when, and whether the certificate is trusted.
+            <br />
+            <br />
+            The sample signs this PDF document: <a href="files/w-9.pdf" target="_blank">w-9.pdf</a>
+        </p>
+        <div class="col2">
+            Reason:<br />
+            <input type="text" asp-for="TxtReason" style="width: 200px;" /><br />
+            <br />
+            Location:<br />
+            <input type="text" asp-for="TxtLocation" style="width: 200px;" /><br />
+            <br />
+            Digest algorithm:<br />
+            <select asp-for="DdlDigest" asp-items="Model.Digests"></select>
+        </div>
+        <div class="col2">
+            <input type="checkbox" asp-for="ChkBackground" /> The logo behind the signature text<br />
+            <br />
+            <input type="checkbox" asp-for="ChkValidate" /> Return the validation report of the signed document
+            instead of the document
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnSign" value="Sign PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

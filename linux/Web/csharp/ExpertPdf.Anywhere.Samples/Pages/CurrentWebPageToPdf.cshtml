@@ -1,0 +1,48 @@
+@page
+@model ExpertPdf.Samples.Pages.CurrentWebPageToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Convert Current Asp.Net Page to Pdf - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Convert Current Asp.Net Page to Pdfr Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "convert current asp.net page to pdf, hide element, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Convert Current Web Page to Pdf - C# / ASP.NET Core 10 Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to use ExpertPdf Html to Pdf Converter to convert the current web page to pdf,
+            preserving the values entered in the page controls before hitting the 'Convert' button.
+        </p>
+        <p>
+            Sample text field:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtSampleText" />
+        </p>
+        <div class="col2">
+            Sample drop down:<br />
+            <select asp-for="DdlDropDownList1" asp-items="Model.DropDownList1Values"></select>
+            <br />
+            <br />
+            Sample check box:<br />
+            <input type="checkbox" asp-for="ChkSampleCheckbox" />
+            <br />
+            <br />
+        </div>
+        <div class="col2">
+            Sample text field:<br />
+            <input type="text" style="width: 50px;" asp-for="TxtSampleText2" /> px<br />
+            <br />
+            Sample text field:<br />
+            <input type="text" style="width: 50px;" asp-for="TxtSampleText3" /> px<br />
+            <br />
+        </div>
+
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>

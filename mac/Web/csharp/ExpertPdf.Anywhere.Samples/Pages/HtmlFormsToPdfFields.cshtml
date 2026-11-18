@@ -1,0 +1,36 @@
+@page
+@model ExpertPdf.Samples.Pages.HtmlFormsToPdfFieldsModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Html Forms to Pdf Form Fields - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Html Forms to Pdf Form Fields Sample for C# and ASP.NET Core. The controls of an HTML form become fillable PDF form fields.";
+    ViewData["Keywords"] = "html form to pdf form, fillable pdf, pdf form fields, html to pdf, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Html Forms to Pdf Form Fields - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the controls of an HTML form - text boxes, check boxes, radio buttons, lists and text
+            areas - become fillable PDF form fields when ExpertPdf Anywhere converts the page, placed where the controls
+            are and keeping their values. The fields work in PDF/A and accessible (PDF/UA) documents too.
+        </p>
+        <p>
+            Html code:<br />
+            <textarea asp-for="TxtHtmlCode" rows="14" style="width: 95%;"></textarea>
+        </p>
+        <p>
+            <input type="checkbox" asp-for="ChkCreateFormFields" /> Create form fields<br />
+            <br />
+            PDF standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select>
+        </p>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

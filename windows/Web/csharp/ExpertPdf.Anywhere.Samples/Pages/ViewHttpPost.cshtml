@@ -1,0 +1,30 @@
+@page
+@model ExpertPdf.Samples.Pages.ViewHttpPostModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Helper Page - View HTTP POST Data - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Helper Page - View HTTP POST Data. C# / ASP.NET Core 10 Sample.";
+    ViewData["Keywords"] = "http post, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Helper Page - View HTTP POST Data - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            Request method: <b>@Model.Method</b>
+        </p>
+        <p>
+            This page shows the form data posted to it:
+        </p>
+        <ul>
+            @foreach (KeyValuePair<string, string> field in Model.Fields)
+            {
+                <li><b>@field.Key</b>: @field.Value</li>
+            }
+        </ul>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

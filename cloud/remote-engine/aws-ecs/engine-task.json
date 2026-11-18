@@ -1,0 +1,37 @@
+{
+  "family": "expertpdf-engine",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "runtimePlatform": { "cpuArchitecture": "X86_64", "operatingSystemFamily": "LINUX" },
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/expertpdfTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "engine",
+      "image": "ghcr.io/expertpdf/engine:22.0",
+      "essential": true,
+      "readonlyRootFilesystem": true,
+      "portMappings": [
+        { "name": "engine", "containerPort": 8080, "protocol": "tcp", "appProtocol": "http" }
+      ],
+      "secrets": [
+        { "name": "EXPERTPDF_ENGINE_TOKEN", "valueFrom": "SECRET_ARN" }
+      ],
+      "mountPoints": [ { "sourceVolume": "tmp", "containerPath": "/tmp" } ],
+      "healthCheck": {
+        "command": ["CMD", "dotnet", "/app/ExpertPdf.Engine.Host.dll", "--healthcheck"],
+        "interval": 30, "timeout": 10, "retries": 3, "startPeriod": 60
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/expertpdf-engine",
+          "awslogs-region": "REGION",
+          "awslogs-stream-prefix": "engine"
+        }
+      }
+    }
+  ],
+  "volumes": [ { "name": "tmp" } ]
+}

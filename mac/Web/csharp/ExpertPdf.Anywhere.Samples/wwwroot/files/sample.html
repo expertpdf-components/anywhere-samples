@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ExpertPdf HTML to PDF Converter - Sample Page</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #222; margin: 0; padding: 24px 32px; }
+        header { border-bottom: 3px solid #1f5fa8; padding-bottom: 12px; margin-bottom: 18px; }
+        header img { height: 48px; }
+        h1 { color: #1f5fa8; font-size: 28px; margin: 12px 0 6px 0; }
+        h2 { color: #1f5fa8; font-size: 21px; margin-top: 28px; border-bottom: 1px solid #c8d6e8; padding-bottom: 4px; }
+        h3 { font-size: 17px; margin-bottom: 4px; }
+        p { line-height: 1.5; }
+        .lead { font-size: 17px; color: #444; }
+        table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+        th, td { border: 1px solid #b9c7d8; padding: 7px 10px; text-align: left; vertical-align: top; }
+        th { background: #e8f0fa; }
+        tr:nth-child(even) td { background: #f7f9fc; }
+        .note { background: #fff8e1; border-left: 4px solid #f0b400; padding: 10px 14px; }
+        .columns { display: flex; gap: 24px; }
+        .columns > div { flex: 1; }
+        code { font-family: Consolas, "Courier New", monospace; background: #f1f3f6; padding: 1px 4px; }
+        footer { margin-top: 36px; border-top: 1px solid #c8d6e8; padding-top: 8px; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ExpertPdf logo" />
+        <h1>HTML to PDF Converter for .NET</h1>
+        <p class="lead">This page is the input of the ExpertPdf samples. It has headings, paragraphs, lists, a table,
+            an image, links and two pages of content, so the PDF shows how the converter handles each of them.</p>
+    </header>
+
+    <h2 id="contents">Contents</h2>
+    <ul>
+        <li><a href="#engines">Where it runs</a></li>
+        <li><a href="#features">What the converter does</a></li>
+        <li><a href="#standards">Accessible PDF, PDF/A and electronic invoices</a></li>
+        <li><a href="#layout">Page layout</a></li>
+    </ul>
+
+    <h2 id="engines">Where it runs</h2>
+    <p>The converter loads the HTML in a Chromium engine and turns the rendered page into PDF: HTML5, CSS3, flexbox
+        and grid, web fonts and JavaScript frameworks render as they do in a browser.</p>
+    <table>
+        <thead>
+            <tr><th scope="col">Platform</th><th scope="col">Architectures</th><th scope="col">Package</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Windows</td><td>x64, x86</td><td>ExpertPdf.Anywhere.Windows</td></tr>
+            <tr><td>Linux</td><td>x64, ARM64</td><td>ExpertPdf.Anywhere.Linux, ExpertPdf.Anywhere.Linux.Arm64</td></tr>
+            <tr><td>macOS</td><td>Apple Silicon</td><td>ExpertPdf.Anywhere.MacOS</td></tr>
+        </tbody>
+    </table>
+
+    <h2 id="features">What the converter does</h2>
+    <div class="columns">
+        <div>
+            <h3>Input</h3>
+            <ul>
+                <li>Web pages from any address</li>
+                <li>HTML strings and files, with a base address for images and styles</li>
+                <li>Pages that need cookies, HTTP headers, POST data or a login</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Output</h3>
+            <ul>
+                <li>PDF with selectable text, live links and bookmarks</li>
+                <li>Headers and footers with page numbers</li>
+                <li>Images (PNG, JPEG and other formats) of the whole page</li>
+            </ul>
+        </div>
+    </div>
+    <p class="note">The text in this PDF is real text: you can search it, select it and copy it.
+        Visit <a href="https://www.html-to-pdf.net">www.html-to-pdf.net</a> for the full documentation.</p>
+
+    <h2 id="standards">Accessible PDF, PDF/A and electronic invoices</h2>
+    <p>A tagged PDF keeps the logical structure of the page (headings, paragraphs, lists, tables, figures with their
+        alternate text and the reading order), so screen readers and other assistive technologies can use it. Set
+        <code>Tagged = true</code> and the document <code>Language</code>.</p>
+    <p>PDF/A documents are made for long-term archiving: fonts are embedded and the document is self-contained.
+        PDF/A-3 can also carry associated files, which is how ZUGFeRD and Factur-X electronic invoices embed their
+        machine-readable XML next to the visible invoice.</p>
+
+    <h2 id="layout" style="page-break-before: always">Page layout</h2>
+    <p>This heading starts a new PDF page because of the CSS <code>page-break-before: always</code> style. The
+        converter also honors <code>page-break-after</code> and <code>page-break-inside: avoid</code>, and it keeps
+        lines of text and images from being cut between pages.</p>
+    <table style="page-break-inside: avoid">
+        <thead>
+            <tr><th scope="col">Setting</th><th scope="col">Property</th><th scope="col">Default</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Page size</td><td><code>PdfDocumentOptions.PdfPageSize</code></td><td>A4</td></tr>
+            <tr><td>Orientation</td><td><code>PdfDocumentOptions.PdfPageOrientation</code></td><td>Portrait</td></tr>
+            <tr><td>Margins</td><td><code>PdfDocumentOptions.LeftMargin</code> and the others</td><td>0 points</td></tr>
+            <tr><td>Browser width</td><td><code>PageWidth</code></td><td>1024 pixels</td></tr>
+            <tr><td>Header and footer</td><td><code>PdfHeaderOptions</code>, <code>PdfFooterOptions</code></td><td>Not shown</td></tr>
+        </tbody>
+    </table>
+    <p><a href="#contents">Back to the contents</a></p>
+
+    <footer>ExpertPdf - Outside Software SRL - https://www.html-to-pdf.net</footer>
+</body>
+</html>

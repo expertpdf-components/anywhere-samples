@@ -1,0 +1,11 @@
+# ExpertPdf Anywhere, Linux web sample. From this folder:
+#   docker compose up --build
+#   # then open http://localhost:8080
+services:
+  expertpdf-web:
+    build:
+      context: ../../..                   # the samples folder
+      dockerfile: docker/linux/web/Dockerfile
+    image: expertpdf-anywhere:web-linux
+    ports:
+      - "8080:8080"

@@ -1,0 +1,50 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfResizeModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Resize - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Resize Sample for C# and ASP.NET Core. Put the pages of an existing PDF on pages of another size.";
+    ViewData["Keywords"] = "resize pdf, change pdf page size, scale pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Resize - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to put the pages of an existing PDF document on pages of another size with ExpertPdf
+            Anywhere. The content can be scaled to fit, and is aligned on the new page. Links, bookmarks and form fields go
+            with it.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/doc2.pdf" target="_blank">doc2.pdf</a>
+        </p>
+        <div class="col2">
+            Page size:<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select><br />
+            <br />
+            Page orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select><br />
+            <br />
+            Margins (points):<br />
+            <input type="text" asp-for="TxtMargin" style="width: 50px;" />
+        </div>
+        <div class="col2">
+            Horizontal alignment:<br />
+            <select asp-for="DdlHorizontalAlign" asp-items="Model.HorizontalAligns"></select><br />
+            <br />
+            Vertical alignment:<br />
+            <select asp-for="DdlVerticalAlign" asp-items="Model.VerticalAligns"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkAllowScale" /> Scale the content to fit<br />
+            <input type="checkbox" asp-for="ChkKeepAspectRatio" /> Keep the aspect ratio
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnCreatePdf" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

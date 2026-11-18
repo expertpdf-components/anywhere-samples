@@ -1,0 +1,36 @@
+@page
+@model ExpertPdf.Samples.Pages.SearchPdfTextModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Search Text in Pdf - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Search Pdf Text Sample for C# and ASP.NET Core. Find a text in a PDF document and the place of each occurrence.";
+    ViewData["Keywords"] = "search pdf, find text in pdf, text position, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Search Text in Pdf - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to find a text in a PDF document with ExpertPdf Anywhere. Each occurrence is reported with
+            its page and its position on the page, in points from the top-left corner. The sample then marks every occurrence
+            with a rectangle on a copy of the document.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/expertpdf.pdf" target="_blank">expertpdf.pdf</a>
+        </p>
+        <p>
+            Text to search:<br />
+            <input type="text" asp-for="TxtSearch" style="width: 200px;" /><br />
+            <br />
+            <input type="checkbox" asp-for="ChkCaseSensitive" /> Match case<br />
+            <input type="checkbox" asp-for="ChkWholeWords" /> Whole words only
+        </p>
+        <p>
+            <input type="submit" id="BtnSearch" value="Search" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

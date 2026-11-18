@@ -1,0 +1,53 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertPowerPointToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - PowerPoint to Pdf Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere PowerPoint to Pdf Converter Sample for C# and ASP.NET Core. Convert PowerPoint presentations (pptx) to PDF slides, notes pages or handouts on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "powerpoint to pdf, pptx to pdf, convert powerpoint to pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - PowerPoint to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a PowerPoint presentation to PDF with the PowerPoint to PDF converter of ExpertPdf
+            Anywhere: one page per slide, the notes pages, or handouts with several slides on a page. Text, tables, pictures and
+            links are kept. The pages can have the size of the slides, or the slides can be scaled onto the page size chosen below.
+            <br />
+            <br />
+            The sample converts this PowerPoint presentation: <a href="files/presentation.pptx" target="_blank">presentation.pptx</a>
+        </p>
+        <div class="col2">
+            Page setup:<br />
+            <select asp-for="DdlPageSetup" asp-items="Model.PageSetups"></select><br />
+            <br />
+            Page size (when scaled):<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select><br />
+            <br />
+            Page orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select>
+        </div>
+        <div class="col2">
+            Publish:<br />
+            <select asp-for="DdlPublish" asp-items="Model.PublishOptions"></select><br />
+            <br />
+            Slides per handout page:<br />
+            <select asp-for="DdlSlidesPerHandout" asp-items="Model.SlidesPerHandoutOptions"></select><br />
+            <i>(Notes pages and handouts are not produced as a tagged document; choose Slides with PDF/A-3a.)</i><br />
+            <br />
+            PDF standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkPageNumbers" /> Page numbers in the footer
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

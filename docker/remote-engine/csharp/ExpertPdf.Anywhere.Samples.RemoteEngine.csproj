@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>ExpertPdf.Anywhere.Samples.RemoteEngine</AssemblyName>
+    <RootNamespace>ExpertPdf.Anywhere.Samples.RemoteEngine</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Only the managed package: the engines run in the expertpdf/engine container, so the app carries no
+       engine package and no fonts package. That is what lets it run on Alpine (musl), where the native
+       engines cannot run. -->
+  <ItemGroup>
+    <PackageReference Include="ExpertPdf.Anywhere" Version="22.0.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,58 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfRedactionModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Redaction - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Redaction Sample for C# and ASP.NET Core. Remove text, images and links from an existing PDF.";
+    ViewData["Keywords"] = "pdf redaction, redact pdf, remove text from pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Redaction - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to redact an existing PDF document with ExpertPdf Anywhere. The text, images, links and
+            form fields inside the redacted areas are removed from the document - not only covered - and each area is
+            painted over. Areas are found by a text, by a regular expression, or given as a rectangle on a page.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/expertpdf.pdf" target="_blank">expertpdf.pdf</a>
+        </p>
+        <div class="col2">
+            Text to redact:<br />
+            <input type="text" asp-for="TxtText" style="width: 200px;" /><br />
+            <br />
+            <input type="checkbox" asp-for="ChkCaseSensitive" /> Match case<br />
+            <input type="checkbox" asp-for="ChkWholeWords" /> Whole words only<br />
+            <br />
+            Or a regular expression (for example <code>\b\d{4}\b</code>):<br />
+            <input type="text" asp-for="TxtPattern" style="width: 200px;" />
+        </div>
+        <div class="col2">
+            Fill color:<br />
+            <select asp-for="DdlFillColor" asp-items="Model.FillColors"></select><br />
+            <br />
+            Overlay text (written in each area):<br />
+            <input type="text" asp-for="TxtOverlay" style="width: 200px;" />
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <b>Redact an area</b> (optional, in points from the top-left corner of the page; leave the width empty to
+            redact by text only)
+        </p>
+        <p>
+            Page number: <input type="text" asp-for="TxtAreaPage" style="width: 40px;" />
+            &nbsp; X: <input type="text" asp-for="TxtAreaX" style="width: 40px;" />
+            &nbsp; Y: <input type="text" asp-for="TxtAreaY" style="width: 40px;" />
+            &nbsp; Width: <input type="text" asp-for="TxtAreaWidth" style="width: 40px;" />
+            &nbsp; Height: <input type="text" asp-for="TxtAreaHeight" style="width: 40px;" />
+        </p>
+        <p>
+            <input type="submit" id="BtnRedact" value="Redact PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

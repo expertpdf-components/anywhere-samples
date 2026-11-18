@@ -1,0 +1,34 @@
+@page
+@model ExpertPdf.Samples.Pages.ZugferdInvoiceModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - ZUGFeRD / Factur-X Electronic Invoice - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf ZUGFeRD / Factur-X Sample for C# ASP.NET Core. Convert an HTML invoice to a PDF/A-3 hybrid electronic invoice.";
+    ViewData["Keywords"] = "zugferd, factur-x, en 16931, e-invoice, pdf/a-3, html to pdf";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - ZUGFeRD / Factur-X Electronic Invoice - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            A ZUGFeRD or Factur-X invoice is a hybrid invoice: a PDF/A-3 document that people read, with the same invoice embedded as
+            structured XML that accounting software reads without retyping. This sample converts an
+            <a href="~/files/invoice.html" target="_blank">HTML invoice</a> to PDF/A-3 and embeds its
+            <a href="~/files/factur-x.xml" target="_blank">Factur-X XML</a> (profile EN 16931) with <i>Document.AddZugferdInvoice</i>.
+        </p>
+        <p>
+            The invoice is PDF/A-3a, which is also tagged and accessible.
+        </p>
+        <p>
+            Invoice page:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create Invoice" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

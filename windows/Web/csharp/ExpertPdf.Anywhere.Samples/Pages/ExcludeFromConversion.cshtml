@@ -1,0 +1,37 @@
+@page
+@model ExpertPdf.Samples.Pages.ExcludeFromConversionModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Exclude Elements from Conversion with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Exclude Elements from Conversion with Html to Pdf Converter Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "exclude element, hide element, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Exclude Elements from Conversion with Html to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter can be used to convert a web page excluding certain elements from the conversion using ExpertPdf Anywhere.
+            <br />
+            <br />
+            The elements from the page that will be excluded from the converted pdf document are defined using CSS selectors.
+            For example, the selector for all the H1 elements is "H1", the selector for all the elements with the CSS class name 'myclass' is "*.myclass" and
+            the selector for the elements with the id 'myid' is "*#myid". Read more about CSS selectors <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">here</a>.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" value="https://www.html-to-pdf.net" asp-for="TxtUrl" />
+            <br />
+            <br />
+            Exclude the following elements:<br />
+            <input type="text" style="width: 90%;" value="*.banner, *.footer_page" asp-for="TxtElements" />
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

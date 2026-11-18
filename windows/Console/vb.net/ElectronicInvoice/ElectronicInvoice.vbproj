@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <TargetFrameworks Condition="$([MSBuild]::VersionGreaterThanOrEquals('$(NETCoreSdkVersion)', '11.0'))">net10.0;net11.0</TargetFrameworks>
+    <TargetFramework Condition="$([MSBuild]::VersionGreaterThanOrEquals('$(NETCoreSdkVersion)', '11.0'))"></TargetFramework>
+    <RootNamespace>ElectronicInvoice</RootNamespace>
+    <AssemblyName>ElectronicInvoice</AssemblyName>
+    <StartupObject>ElectronicInvoice.Program</StartupObject>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- the ExpertPdf Anywhere library with its Windows x64 engines -->
+    <PackageReference Include="ExpertPdf.Anywhere.Windows" Version="22.0.0" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="ExpertPdf.Anywhere.Drawing" />
+    <Import Include="System.IO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="invoice.html" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="factur-x.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="logo.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

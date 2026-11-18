@@ -1,0 +1,38 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertAndEmailModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Html to Pdf Converter - Convert and Email as Attachment - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Html to Pdf Converter. Convert and Email as Attachment Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "html to pdf converter, convert and email, email as attachment, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Html to Pdf Converter - Convert and Email as Attachment - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows the simplest code that can be used to convert an url to pdf using ExpertPdf Anywhere and then email the generated PDF document as an attachment.
+            <br />
+            <br />
+            IMPORTANT: set the details of your SMTP server in the code of this sample (below).
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" value="https://www.html-to-pdf.net" asp-for="TxtUrl" style="width:90%" />
+            <br />
+            <br />
+            Email:<br />
+            <input type="text" value="your_email@your.domain.com" asp-for="TxtEmail" style="width:50%" />
+            <br />
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF and Email" class="mybutton" />
+            &nbsp;&nbsp;
+            <span style="color: red">@ViewData["Message"]</span>
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

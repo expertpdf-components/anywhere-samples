@@ -1,0 +1,44 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertUrlToImageModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Convert from Url to Image - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Convert from Url to Image Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "convert from url to image, html to png, html to jpg, html to image, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Convert from Url to Image - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to use ExpertPdf html to image converter to convert an url to PNG, JPEG or BMP, also setting a few properties.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" value="https://www.html-to-pdf.net" asp-for="TxtUrl" style="width: 90%;" />
+        </p>
+        <div class="col2">
+            Image Format:<br />
+            <select asp-for="DdlImageFormat" asp-items="Model.ImageFormats"></select><br />
+            <br />
+        </div>
+        <div class="col2">
+            Web Page Width:<br />
+            <input asp-for="TxtWidth" type="text" value="1024" style="width: 50px;" /> px<br />
+            <br />
+            Web Page Height:<br />
+            <input asp-for="TxtHeight" type="text" value="" style="width: 50px;" /> px<br />
+            (leave empty to auto detect)<br />
+            <br />
+
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" name="BtnConvert" value="Convert To Image" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

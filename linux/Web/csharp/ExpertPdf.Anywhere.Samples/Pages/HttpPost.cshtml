@@ -1,0 +1,38 @@
+@page
+@model ExpertPdf.Samples.Pages.HttpPostModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Send HTTP POST Data with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf HTTP POST Sample for C# ASP.NET Core. Convert a page that expects posted form data to PDF.";
+    ViewData["Keywords"] = "http post, form data, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Send HTTP POST Data - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            Some pages show their content only after a form is submitted to them. With <i>HttpPostParameters</i> the converter requests
+            the page with the POST method and sends these name/value pairs as the form data, like a browser does when a form is submitted.
+        </p>
+        <p>
+            The default page below is a helper page of this application that shows the form data it receives.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" asp-for="TxtUrl" />
+            <br />
+            <br />
+            Form fields:<br />
+            <input type="text" style="width: 150px;" asp-for="TxtName1" /> = <input type="text" style="width: 250px;" asp-for="TxtValue1" /><br />
+            <input type="text" style="width: 150px;" asp-for="TxtName2" /> = <input type="text" style="width: 250px;" asp-for="TxtValue2" /><br />
+            <input type="text" style="width: 150px;" asp-for="TxtName3" /> = <input type="text" style="width: 250px;" asp-for="TxtValue3" />
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.WebElementsLocationModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Get Web Elements Location in PDF with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Get Web Elements Location in PDF with Html to Pdf Converter Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "web element location, pdf, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Get Web Elements Location in PDF - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter can locate certain web elements in the generated PDF using ExpertPdf Anywhere.
+            <br />
+            <br />
+            The web elements are defined using CSS selectors.
+            For example, the selector for all the H1 elements is "H1", the selector for all the elements with the CSS class name 'myclass' is "*.myclass" and
+            the selector for the elements with the id 'myid' is "*#myid". Read more about CSS selectors <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">here</a>.
+            <br />
+            <br />
+            The specified web elements will be marked/highlighted in PDF with a green rectangle.
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" value="https://www.html-to-pdf.net" asp-for="TxtUrl" style="width:90%" />
+            <br />
+            <br />
+            Web elements:<br />
+            <input type="text" value="h1, h2" asp-for="TxtElements" style="width:90%" />
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

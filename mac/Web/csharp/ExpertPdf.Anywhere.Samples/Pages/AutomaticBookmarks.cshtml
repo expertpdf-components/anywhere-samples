@@ -1,0 +1,40 @@
+@page
+@model ExpertPdf.Samples.Pages.AutomaticBookmarksModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Automatic Bookmarks with Html to Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Automatic Bookmarks with Html to Pdf Converter Sample for C#/ASP.NET Core 10. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "bookmarks, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Automatic Bookmarks with Html to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how the html to pdf converter can automatically generate pdf bookmarks based on some elements selection using ExpertPdf Anywhere.
+            <br />
+            <br />
+            The elements that will be bookmarked are defined using CSS selectors.
+            For example, the selector for all the H1 elements is "H1", the selector for all the elements with the CSS class name 'myclass' is "*.myclass" and
+            the selector for the elements with the id 'myid' is "*#myid". Read more about CSS selectors <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">here</a>.
+            <br />
+            <br />
+            <asp:HyperLink ID="LnkTest" runat="server" Text="Test document" Target="_blank"></asp:HyperLink>
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" asp-for="TxtUrl" style="width: 90%;" />
+            <br />
+            <br />
+            Bookmark the following elements:<br />
+            <input type="text" value="h1, h2" asp-for="TxtElements" style="width: 90%;" />
+            <br />
+            <br />
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

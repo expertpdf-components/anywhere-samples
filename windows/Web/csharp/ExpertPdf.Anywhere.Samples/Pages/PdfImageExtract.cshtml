@@ -1,0 +1,38 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfImageExtractModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Extract Images from Pdf - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Images Extractor Sample for C# and ASP.NET Core. Extract the images of a PDF document.";
+    ViewData["Keywords"] = "extract images from pdf, pdf images extractor, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Extract Images from Pdf - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to extract the images of a PDF document with the PDF images extractor of ExpertPdf
+            Anywhere. Small images and images repeated on several pages can be left out. The images are returned in a zip
+            archive.
+            <br />
+            <br />
+            The sample uses this PDF document: <a href="files/expertpdf.pdf" target="_blank">expertpdf.pdf</a>
+        </p>
+        <p>
+            Minimum width and height (pixels):<br />
+            <input type="text" asp-for="TxtMinimumSize" style="width: 50px;" /><br />
+            <br />
+            Image format:<br />
+            <select asp-for="DdlImageFormat" asp-items="Model.ImageFormats"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkSkipDuplicates" /> Skip duplicate images
+        </p>
+        <p>
+            <input type="submit" id="BtnExtract" value="Extract Images" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

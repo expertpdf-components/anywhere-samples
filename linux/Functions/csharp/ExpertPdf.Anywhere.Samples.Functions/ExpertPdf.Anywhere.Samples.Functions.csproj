@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace>ExpertPdf.Anywhere.Samples.Functions</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Azure Functions v4, .NET isolated worker. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="2.52.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.3.0" />
+  </ItemGroup>
+
+  <!-- The platform package for the target's architecture: Linux ARM64 when publishing with -r linux-arm64
+       or building on an arm64 machine, Linux x64 otherwise. Override with -p:AnywherePlatform=Linux.Arm64. -->
+  <PropertyGroup>
+    <AnywherePlatform Condition="'$(AnywherePlatform)' == '' and '$(RuntimeIdentifier)' == 'linux-arm64'">Linux.Arm64</AnywherePlatform>
+    <AnywherePlatform Condition="'$(AnywherePlatform)' == '' and '$(RuntimeIdentifier)' != ''">Linux</AnywherePlatform>
+    <AnywherePlatform Condition="'$(AnywherePlatform)' == '' and '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">Linux.Arm64</AnywherePlatform>
+    <AnywherePlatform Condition="'$(AnywherePlatform)' == ''">Linux</AnywherePlatform>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- the ExpertPdf Anywhere library with its Linux engines -->
+    <PackageReference Include="ExpertPdf.Anywhere.$(AnywherePlatform)" Version="22.0.0" />
+    <!-- Fonts for every language: a Linux server or container often has none, and without them
+         Arabic, Chinese, Japanese, Korean, Hindi, Thai and other scripts print as empty boxes. -->
+    <PackageReference Include="ExpertPdf.Anywhere.Fonts" Version="22.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>

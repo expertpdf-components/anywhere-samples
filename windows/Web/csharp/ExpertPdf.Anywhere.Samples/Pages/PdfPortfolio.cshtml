@@ -1,0 +1,35 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfPortfolioModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Portfolio - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf Portfolio Sample for C# and ASP.NET Core. Put several files in one PDF portfolio.";
+    ViewData["Keywords"] = "pdf portfolio, pdf package, embed files in pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Portfolio - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to create a PDF portfolio with ExpertPdf Anywhere: one PDF file that carries other
+            files - here a PDF document, an HTML page and an image - which a PDF viewer lists and opens.
+            <br />
+            <br />
+            The files put in the portfolio:<br />
+            <a href="files/doc2.pdf" target="_blank">doc2.pdf</a><br />
+            <a href="files/document.html" target="_blank">document.html</a><br />
+            <a href="files/logo.png" target="_blank">logo.png</a>
+        </p>
+        <p>
+            View mode:<br />
+            <select asp-for="DdlViewMode" asp-items="Model.ViewModes"></select>
+        </p>
+        <p>
+            <input type="submit" id="BtnCreatePdf" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

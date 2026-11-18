@@ -1,0 +1,61 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertFromJsModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Start Conversion from Javascript - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Start Conversion from Javascript Sample for C#/ASP.NET Core 10. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "convert from javascript, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Start Conversion from Javascript - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to manually start the html to pdf conversion of the ExpertPdf HtmlToPdf Converter Library for .NET using a Javascript call.
+            <br />
+            <br />
+            ExpertPdf exposes a global Javascript variable called <i>ExpertPdfJSObj</i> in the page that is being converted. Using this variable you can check if the javascript code
+            is executed inside the converter (check if <i>typeof(ExpertPdfJSObj) == "object"</i>). The converter version can also be checked using <i>ExpertPdfJSObj.getAppVersion()</i>.
+            <br />
+            <br />
+            The most important feature of the Javascript interface is the possibility to manually start the page conversion to pdf with a javascript call. To do that, you must:
+            <br /><br />
+            1. Set <i>converter.StartupMode = StartupMode.Manual</i><br />
+            2. Call <i>ExpertPdfJSObj.startConversion()</i> from javascript
+            <br />
+            <br />
+            Important:<br />
+            - If <i>converter.StartupMode</i> is set to <i>StartupMode.Manual</i> and <i>ExpertPdfJSObj.startConversion()</i> is not called from javascript, the conversion will timeout.<br />
+            - If <i>converter.StartupMode</i> is set to the default value <i>StartupMode.Automatic</i>, the conversion will start without waiting for any javascript calls.
+            <br />
+            <br />
+            Below it's the link to a test page that waits for 3 seconds after it loads and then calls the javascript conversion method.
+            Converting it in <i>StartupMode.Manual</i> mode will display the time elapsed. Converting it in <i>StartupMode.Automatic</i> mode will not show that 3 seconds time interval.
+            <br />
+            <br />
+            <a href="/files/js-conversion.html" target="_blank" id="LnkTest">Test page</a>
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" asp-for="TxtUrl" style="width: 90%" />
+        </p>
+        <div class="col2">
+            Conversion start mode:<br />
+            <select asp-for="DdlStartupMode" asp-items="Model.StartupModes"></select>
+            <br />
+        </div>
+        <div class="col2">
+            Timeout:<br />
+            <input type="text" value="20" asp-for="TxtTimeout" style="width:50px" /> seconds<br />
+            <br />
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

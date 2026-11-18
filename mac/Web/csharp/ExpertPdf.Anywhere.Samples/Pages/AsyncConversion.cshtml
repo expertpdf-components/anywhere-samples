@@ -1,0 +1,37 @@
+@page
+@model ExpertPdf.Samples.Pages.AsyncConversionModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Asynchronous Html to Pdf Conversion - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Asynchronous Conversion Sample for C# and ASP.NET Core. Convert several web pages at the same time with async and await.";
+    ViewData["Keywords"] = "async html to pdf, await, parallel conversion, html to pdf, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Asynchronous Html to Pdf Conversion - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert web pages asynchronously with ExpertPdf Anywhere. The page handler awaits the
+            conversions, so no request thread waits while a page loads and renders, and several conversions run at the
+            same time. The converted documents are joined into one; its title says how long the conversions took. Check
+            the box to convert the pages one after another instead, for comparison.
+        </p>
+        <p>
+            Url 1:<br />
+            <input type="text" asp-for="TxtUrl1" style="width: 90%;" /><br />
+            Url 2:<br />
+            <input type="text" asp-for="TxtUrl2" style="width: 90%;" /><br />
+            Url 3:<br />
+            <input type="text" asp-for="TxtUrl3" style="width: 90%;" /><br />
+            <br />
+            <input type="checkbox" asp-for="ChkOneAfterAnother" /> Convert the pages one after another
+        </p>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

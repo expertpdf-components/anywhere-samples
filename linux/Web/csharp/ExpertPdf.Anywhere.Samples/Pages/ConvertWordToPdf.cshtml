@@ -1,0 +1,49 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertWordToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Word to Pdf Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Word to Pdf Converter Sample for C# and ASP.NET Core. Convert Word documents (docx, doc, rtf) to PDF on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "word to pdf, docx to pdf, doc to pdf, convert word to pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Word to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a Word document to PDF with the Word to PDF converter of ExpertPdf Anywhere.
+            Headings, tables, pictures, charts and links are kept; the headings become the bookmarks of the PDF. The pages
+            can keep the sizes of the Word document, or the document can be laid out again on the page size chosen below.
+            <br />
+            <br />
+            The sample converts this Word document: <a href="files/document.docx" target="_blank">document.docx</a>
+        </p>
+        <div class="col2">
+            Page setup:<br />
+            <select asp-for="DdlPageSetup" asp-items="Model.PageSetups"></select><br />
+            <br />
+            Page size (when laid out again):<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select><br />
+            <br />
+            Page orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select>
+        </div>
+        <div class="col2">
+            Bookmarks:<br />
+            <select asp-for="DdlBookmarks" asp-items="Model.BookmarkSources"></select><br />
+            <br />
+            PDF standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkPageNumbers" /> Page numbers in the footer
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

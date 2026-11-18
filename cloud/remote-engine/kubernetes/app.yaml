@@ -1,0 +1,69 @@
+# The application, in the namespace where engine.yaml created the "expertpdf-engine" Service.
+# Replace IMAGE with the application image you pushed (see README.md), then:
+#   kubectl -n pdf apply -f app.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expertpdf-app
+  labels:
+    app: expertpdf-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expertpdf-app
+  template:
+    metadata:
+      labels:
+        app: expertpdf-app
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1654          # the "app" user of the .NET images
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: app
+          image: IMAGE
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: EXPERTPDF_RENDERING_ENGINE
+              value: ChromiumRemote
+            # Not needed here: the default endpoint http://expertpdf-engine:8080 is the engine's Service
+            # in this namespace. From another namespace use
+            # http://expertpdf-engine.<namespace>.svc.cluster.local:8080.
+            # - name: EXPERTPDF_ENGINE_ENDPOINT
+            #   value: http://expertpdf-engine.pdf.svc.cluster.local:8080
+            - name: EXPERTPDF_ENGINE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: expertpdf-engine-token
+                  key: token
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              cpu: 250m
+              memory: 256Mi
+            limits:
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expertpdf-app
+spec:
+  selector:
+    app: expertpdf-app
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

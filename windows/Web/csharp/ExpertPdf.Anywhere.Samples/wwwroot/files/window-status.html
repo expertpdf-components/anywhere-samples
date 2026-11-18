@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Page that loads its content with a script</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 15px; padding: 24px; }
+        h1 { color: #1f5fa8; }
+        table { border-collapse: collapse; }
+        th, td { border: 1px solid #b9c7d8; padding: 6px 12px; }
+        th { background: #e8f0fa; }
+    </style>
+</head>
+<body>
+    <h1>Report loaded by a script</h1>
+    <p id="status">Loading the report...</p>
+    <div id="report"></div>
+    <script>
+        // the content arrives two seconds after the page loads, like the data of a page that calls a web service;
+        // when it is in place the page sets window.status, and a converter with WindowStatus = "ready" waits for it
+        setTimeout(function () {
+            var rows = [['North', '412,300'], ['South', '305,900'], ['East', '287,450'], ['West', '281,100']];
+            var html = '<table><tr><th scope="col">Region</th><th scope="col">Revenue (EUR)</th></tr>';
+            for (var i = 0; i < rows.length; i++)
+                html += '<tr><td>' + rows[i][0] + '</td><td>' + rows[i][1] + '</td></tr>';
+            document.getElementById('report').innerHTML = html + '</table>';
+            document.getElementById('status').innerHTML = 'The report data was loaded by the script.';
+            window.status = 'ready';
+        }, 2000);
+    </script>
+</body>
+</html>

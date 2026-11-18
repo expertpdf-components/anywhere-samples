@@ -1,0 +1,47 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfConverterSecurityModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Security Settings with Html To Pdf Converter - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Pdf Security Settings with Html To Pdf Converter Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "pdf security, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Security Settings with Html To Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert from html to pdf using ExpertPdf, how to set a password to be able to view or
+            modify the document and also specify user permissions for the pdf document (if the user can print, copy content, fill forms, modify, etc).
+        </p>
+        <p>
+            Url:<br />
+            <input type="text" style="width: 90%;" value="https://www.html-to-pdf.net" asp-for="TxtUrl" />
+        </p>
+        <div class="col2">
+            User Password:<br />
+            <input type="text" asp-for="TxtUserPassword" /><br />
+            <br />
+            Owner Password:<br />
+            <input type="text" asp-for="TxtOwnerPassword" /><br />
+            <br />
+        </div>
+        <div class="col2">
+            <input type="checkbox" asp-for="ChkCanAssembleDocument" checked /> Allow Assemble Document<br />
+            <input type="checkbox" asp-for="ChkCanCopyContent" checked /> Allow Copy Content<br />
+            <input type="checkbox" asp-for="ChkCanEditAnnotations" checked /> Allow Edit Annotations<br />
+            <input type="checkbox" asp-for="ChkCanEditContent" checked /> Allow Edit Content<br />
+            <input type="checkbox" asp-for="ChkCanFillFormFields" checked />  Fill Form Fields<br />
+            <input type="checkbox" asp-for="ChkCanPrint" checked /> Allow Print<br />
+            <br />
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnCreatePdf" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

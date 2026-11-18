@@ -1,0 +1,35 @@
+﻿@page
+@model ExpertPdf.Samples.Pages.DigitalSignaturesModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Digital Signatures - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Digital Signatures Sample for C# / ASP.NET Core 10. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "digital signatures, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Digital Signatures - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            Digital signatures can be added to a PDF document using <i>PdfDigitalSignatureElement</i> objects.
+            Adding a digital signature requires a PKCS#12 certificate (provided as a .pfx or a .p12 file).
+            <br />
+            <br />
+            Sample certificate file:<br />
+            <a href="files/oss.pfx" target="_blank">Certificate</a><br />
+            <br />
+            The following sample shows how to add a digital signature to a pdf document using ExpertPdf Anywhere.
+            <br />
+            <br />
+            IMPORTANT: Please note that the certificate used is a self signed certificate generated for testing purposes only.
+            The signature will appear as not valid in a pdf viewer. Using a valid certificate will result in a valid digital signature.
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Quarterly Sales Report</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #222; margin: 0; padding: 24px 32px; }
+        h1 { color: #1f5fa8; font-size: 26px; margin-bottom: 4px; }
+        .subtitle { color: #666; margin-top: 0; }
+        table { border-collapse: collapse; width: 100%; margin-top: 18px; }
+        th, td { border: 1px solid #c3cfdd; padding: 7px 10px; }
+        th { background: #e8f0fa; text-align: left; }
+        td.num, th.num { text-align: right; }
+        tfoot td { font-weight: bold; background: #f3f6fa; }
+        .bar { background: #1f5fa8; height: 12px; }
+    </style>
+</head>
+<body>
+    <h1>Quarterly Sales Report</h1>
+    <p class="subtitle">Third quarter of 2026, all regions</p>
+    <p>Sales grew in every region compared to the second quarter. The table below shows the revenue per region and
+        the share of the total.</p>
+    <table>
+        <thead>
+            <tr><th scope="col">Region</th><th scope="col" class="num">Revenue (EUR)</th><th scope="col" class="num">Growth</th><th scope="col">Share of the total</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>North</td><td class="num">412,300</td><td class="num">+6.2%</td><td><div class="bar" style="width: 32%"></div></td></tr>
+            <tr><td>South</td><td class="num">305,900</td><td class="num">+3.8%</td><td><div class="bar" style="width: 24%"></div></td></tr>
+            <tr><td>East</td><td class="num">287,450</td><td class="num">+9.1%</td><td><div class="bar" style="width: 22%"></div></td></tr>
+            <tr><td>West</td><td class="num">281,100</td><td class="num">+4.5%</td><td><div class="bar" style="width: 22%"></div></td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td>Total</td><td class="num">1,286,750</td><td class="num">+5.9%</td><td></td></tr>
+        </tfoot>
+    </table>
+    <p>The East region had the strongest growth, mostly from new customers in the retail sector.</p>
+</body>
+</html>

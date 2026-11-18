@@ -1,0 +1,53 @@
+@page
+@model ExpertPdf.Samples.Pages.ConvertExcelToPdfModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Excel to Pdf Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Excel to Pdf Converter Sample for C# and ASP.NET Core. Convert Excel workbooks (xlsx, xls, csv) to PDF on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "excel to pdf, xlsx to pdf, xls to pdf, convert excel to pdf, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Excel to Pdf Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert an Excel workbook to PDF with the Excel to PDF converter of ExpertPdf Anywhere.
+            Tables, charts, pictures and links are kept, and every sheet becomes a bookmark of the PDF. The sheets can be printed
+            as their own page setup says, or laid out again on the page size chosen below.
+            <br />
+            <br />
+            The sample converts this Excel workbook: <a href="files/workbook.xlsx" target="_blank">workbook.xlsx</a>
+        </p>
+        <div class="col2">
+            Page setup:<br />
+            <select asp-for="DdlPageSetup" asp-items="Model.PageSetups"></select><br />
+            <br />
+            Page size (when laid out again):<br />
+            <select asp-for="DdlPageSize" asp-items="Model.PageSizes"></select><br />
+            <br />
+            Page orientation:<br />
+            <select asp-for="DdlPageOrientation" asp-items="Model.PageOrientations"></select><br />
+            <br />
+            Scaling:<br />
+            <select asp-for="DdlLayout" asp-items="Model.Layouts"></select>
+        </div>
+        <div class="col2">
+            Gridlines:<br />
+            <select asp-for="DdlGridLines" asp-items="Model.GridLineModes"></select><br />
+            <br />
+            PDF standard:<br />
+            <select asp-for="DdlStandard" asp-items="Model.Standards"></select><br />
+            <br />
+            <input type="checkbox" asp-for="ChkSheetBookmarks" /> One bookmark per sheet<br />
+            <input type="checkbox" asp-for="ChkPageNumbers" /> Page numbers in the footer
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,6 @@
+# Build context for the Docker and cloud samples is this samples folder. Keep build output and IDE state out.
+**/bin
+**/obj
+**/.vs
+**/*.user
+**/out

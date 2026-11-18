@@ -1,0 +1,32 @@
+﻿@page
+@model ExpertPdf.Samples.Pages.PdfCompressionModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf Compression - C# / ASP.NET Core 10";
+    ViewData["Description"] = "ExpertPdf Pdf Compression Sample for C# ASP.NET MVC. Pdf Library for .NET with full sample code in C# and VB.NET.";
+    ViewData["Keywords"] = "pdf compression, pdf library, sample code, html to pdf, pdf converter";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf Compression - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            ExpertPdf Anywhere offers the possibility to reduce the size of the generated pdf document using compression.
+            <br />
+            <br />
+            This sample shows how to create a new PDF document using ExpertPdf, how to add a text element to it and use compression to reduce the size of the generated pdf document.
+            <br /><br />
+            Compression Level:<br />
+            <select asp-for="DdlPdfCompressionLevel" asp-items="Model.CompressionLevels"></select>
+            <br />
+            <br />
+        </p>
+        <p>
+            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->
