@@ -1,0 +1,56 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfToWordConverterModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf to Word Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf to Word Converter Sample for C# and ASP.NET Core. Convert PDF to editable Word (docx), rtf, odt, html or markdown on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "pdf to word, pdf to docx, convert pdf to word, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf to Word Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a PDF document to an editable Word document with the Pdf to Word converter of
+            ExpertPdf Anywhere. Headings, paragraphs, lists, tables, pictures and links become Word content, read across the
+            page's columns in reading order. The document can also be written as rtf, OpenDocument text, html or markdown.
+            The conversion runs in the application's process; no native engine is needed.
+            <br />
+            <br />
+            The sample converts this PDF, which Microsoft Word saved from the Word to Pdf sample's document, or a PDF you
+            upload: <a href="files/document.pdf" target="_blank">document.pdf</a>
+        </p>
+        <p>
+            PDF document (optional):<br />
+            <input type="file" asp-for="FilePdf" accept=".pdf" />
+        </p>
+        <div class="col2">
+            Layout:<br />
+            <select asp-for="DdlLayout" asp-items="Model.Layouts"></select><br />
+            <br />
+            Output format:<br />
+            <select asp-for="DdlFormat" asp-items="Model.Formats"></select><br />
+            <br />
+            Start page:<br />
+            <input type="text" style="width: 50px;" asp-for="TxtStartPage" /><br />
+            <br />
+            End page (0 for the last page):<br />
+            <input type="text" style="width: 50px;" asp-for="TxtEndPage" />
+        </div>
+        <div class="col2">
+            <input type="checkbox" asp-for="ChkImages" /> Images and vector art<br />
+            <input type="checkbox" asp-for="ChkHeadersAndFooters" /> Page headers and footers<br />
+            <input type="checkbox" asp-for="ChkLinks" /> Links<br />
+            <input type="checkbox" asp-for="ChkBookmarks" /> Bookmarks<br />
+            <input type="checkbox" asp-for="ChkEmbedFonts" /> Embed the fonts (docx)
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Convert to Word" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

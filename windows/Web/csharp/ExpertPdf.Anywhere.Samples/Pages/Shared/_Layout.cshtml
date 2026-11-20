@@ -14,6 +14,7 @@
     <link rel="icon" href="~/assets/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="~/assets/expertpdf-icon.svg" />
     <script src="~/assets/site.js" defer></script>
+    <script src="~/js/sample-form.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +42,20 @@
             <a href="https://www.html-to-pdf.net/pdf-library/" class="nav-link" aria-current="false">Products</a>
             <button class="nav-caret" type="button" aria-label="Open the Products menu" aria-expanded="false" aria-controls="sub-products"><svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             <div class="sub-menu sub-menu-mega" id="sub-products">
-              <a href="https://www.html-to-pdf.net/expertpdf-anywhere/" class="mega-any"><span class="mega-any-name">ExpertPdf Anywhere<span class="mega-tag">New</span></span><span class="mega-any-desc">Every tool in one library · Windows, Linux, macOS</span></a>
+              <div class="mega-any">
+                <a href="https://www.html-to-pdf.net/expertpdf-anywhere/" class="mega-any-head"><span class="mega-any-name">ExpertPdf Anywhere<span class="mega-tag">New</span></span><span class="mega-any-desc">Every tool in one library · Windows, Linux, macOS</span></a>
+                <div class="mega-office">
+                  <a href="https://www.html-to-pdf.net/html-to-pdf-cross-platform/" class="is-flag">HTML to PDF</a>
+                  <a href="https://docs.html-to-pdf.net/anywhere-library/html/TaggedPdf.htm">Accessible PDF/UA</a>
+                  <a href="https://docs.html-to-pdf.net/anywhere-library/html/PdfStandard.htm">PDF/A archiving</a>
+                  <a href="https://www.html-to-pdf.net/word-to-pdf/">Word to PDF</a>
+                  <a href="https://www.html-to-pdf.net/excel-to-pdf/">Excel to PDF</a>
+                  <a href="https://www.html-to-pdf.net/powerpoint-to-pdf/">PowerPoint to PDF</a>
+                  <a href="https://www.html-to-pdf.net/pdf-to-word/">PDF to Word</a>
+                  <a href="https://www.html-to-pdf.net/pdf-to-excel/">PDF to Excel</a>
+                  <a href="https://www.html-to-pdf.net/pdf-to-powerpoint/">PDF to PowerPoint</a>
+                </div>
+              </div>
               <p class="mega-classic">Classic components</p>
               <div class="mega-grid">
                 <div class="mega-col">
@@ -148,6 +162,12 @@
                         <li><a href="~/ConvertExcelToPdf" title="ExpertPdf Anywhere - Excel to Pdf">Excel to Pdf</a></li>
                         <li><a href="~/ConvertPowerPointToPdf" title="ExpertPdf Anywhere - PowerPoint to Pdf">PowerPoint to Pdf</a></li>
                     </ul>
+                    <p class="rail-head">Pdf to Word, Excel and PowerPoint</p>
+                    <ul>
+                        <li><a href="~/PdfToWordConverter" title="ExpertPdf Anywhere - Pdf to Word">Pdf to Word</a></li>
+                        <li><a href="~/PdfToExcelConverter" title="ExpertPdf Anywhere - Pdf to Excel">Pdf to Excel</a></li>
+                        <li><a href="~/PdfToPowerPointConverter" title="ExpertPdf Anywhere - Pdf to PowerPoint">Pdf to PowerPoint</a></li>
+                    </ul>
                     <p class="rail-head">Accessible PDF, PDF/A, E-Invoices</p>
                     <ul>
                         <li><a href="~/TaggedPdf" title="ExpertPdf Anywhere - Tagged (accessible) PDF">Tagged (Accessible) PDF</a></li>
@@ -198,7 +218,7 @@
                 </nav>
             </aside>
             <div class="sample-card">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     @RenderBody()
                 </form>
                 @if (Context.Request.Path.Value.Contains("Index") || (Context.Request.Path.Value.Length == 1))

@@ -1,0 +1,49 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfToPowerPointConverterModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf to PowerPoint Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf to PowerPoint Converter Sample for C# and ASP.NET Core. Convert PDF pages to editable PowerPoint slides (pptx) on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "pdf to powerpoint, pdf to pptx, convert pdf to powerpoint, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf to PowerPoint Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a PDF document to a PowerPoint presentation with the Pdf to PowerPoint
+            converter of ExpertPdf Anywhere. Every page becomes a slide: its text in editable text boxes, its tables as
+            PowerPoint tables and its images and vector art as pictures, each where the page has it. The conversion runs in
+            the application's process; no native engine is needed.
+            <br />
+            <br />
+            The sample converts this PDF, which Microsoft PowerPoint saved from the PowerPoint to Pdf sample's presentation,
+            or a PDF you upload: <a href="files/presentation.pdf" target="_blank">presentation.pdf</a>
+        </p>
+        <p>
+            PDF document (optional):<br />
+            <input type="file" asp-for="FilePdf" accept=".pdf" />
+        </p>
+        <div class="col2">
+            Start page:<br />
+            <input type="text" style="width: 50px;" asp-for="TxtStartPage" /><br />
+            <br />
+            End page (0 for the last page):<br />
+            <input type="text" style="width: 50px;" asp-for="TxtEndPage" />
+        </div>
+        <div class="col2">
+            <input type="checkbox" asp-for="ChkTables" /> Tables as PowerPoint tables<br />
+            <input type="checkbox" asp-for="ChkImages" /> Images and vector art<br />
+            <input type="checkbox" asp-for="ChkHeadersAndFooters" /> Page headers and footers<br />
+            <input type="checkbox" asp-for="ChkLinks" /> Links
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Convert to PowerPoint" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

@@ -1,0 +1,53 @@
+@page
+@model ExpertPdf.Samples.Pages.PdfToExcelConverterModel
+@{
+    ViewData["Title"] = "ExpertPdf Anywhere - Pdf to Excel Converter - C# / ASP.NET Core";
+    ViewData["Description"] = "ExpertPdf Anywhere Pdf to Excel Converter Sample for C# and ASP.NET Core. Convert the tables of a PDF to an Excel workbook (xlsx) with typed cell values, on Windows, Linux and macOS.";
+    ViewData["Keywords"] = "pdf to excel, pdf to xlsx, convert pdf to excel, pdf tables to excel, pdf library, sample code";
+}
+<article class="post type-post status-publish format-standard hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">ExpertPdf Anywhere - Pdf to Excel Converter - C# / ASP.NET Sample</h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-content">
+        <p>
+            This sample shows how to convert a PDF document to an Excel workbook with the Pdf to Excel converter of
+            ExpertPdf Anywhere. The tables of the pages become worksheets, and numbers and dates become typed cell values,
+            so formulas and sorting work on them. The conversion runs in the application's process; no native engine is
+            needed.
+            <br />
+            <br />
+            The sample converts this PDF, which Microsoft Excel saved from the Excel to Pdf sample's workbook, or a PDF you
+            upload: <a href="files/workbook.pdf" target="_blank">workbook.pdf</a>
+        </p>
+        <p>
+            PDF document (optional):<br />
+            <input type="file" asp-for="FilePdf" accept=".pdf" />
+        </p>
+        <div class="col2">
+            Worksheets:<br />
+            <select asp-for="DdlSheets" asp-items="Model.SheetModes"></select><br />
+            <br />
+            Culture of the numbers and dates (empty for the current one, e.g. en-US, de-DE):<br />
+            <input type="text" style="width: 100px;" asp-for="TxtCulture" />
+        </div>
+        <div class="col2">
+            Start page:<br />
+            <input type="text" style="width: 50px;" asp-for="TxtStartPage" /><br />
+            <br />
+            End page (0 for the last page):<br />
+            <input type="text" style="width: 50px;" asp-for="TxtEndPage" /><br />
+            <br />
+            <input type="checkbox" asp-for="ChkTextOutsideTables" /> Text outside the tables<br />
+            <input type="checkbox" asp-for="ChkImages" /> Images
+        </div>
+        <div class="col-clear"></div>
+        <p>
+            <input type="submit" id="BtnConvert" value="Convert to Excel" class="mybutton" />
+        </p>
+    </div>
+    <!-- .entry-content -->
+</article>
+<!-- #post -->

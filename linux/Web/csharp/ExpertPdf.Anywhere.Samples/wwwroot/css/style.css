@@ -1,7 +1,6 @@
 ﻿/* ExpertPdf Anywhere samples: the design of the ExpertPdf web site (www.html-to-pdf.net), then the styles of this sample. */
 
 /* ---- Fonts, design tokens and components of the web site (do not edit this part) ---- */
-/* Geist and Geist Mono (SIL Open Font License 1.1), self-hosted latin subset, variable weight. */
 @font-face {
   font-family: "Geist";
   font-style: normal;
@@ -19,24 +18,17 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* ============================================================
-   ExpertPdf redesign — Design tokens
-   Light-first navy palette, mirroring the existing site's
-   blue chrome (no red).
-   ============================================================ */
 :root {
   --bg: #f5f7fa;
   --bg-elev: #ffffff;
   --bg-elev-2: #eef2f7;
   --bg-inset: #e9eef4;
-  --bg-deep: #0a2540;       /* deepest navy — inverted blocks */
-  --border: rgba(10, 37, 64, 0.10);
+  --bg-deep: #0a2540;         --border: rgba(10, 37, 64, 0.10);
   --border-strong: rgba(10, 37, 64, 0.22);
   --text: #0a2540;
   --text-dim: #475569;
   --text-mute: #7a8595;
-  --accent: #0b66c2;        /* primary navy-blue */
-  --accent-hover: #084e96;
+  --accent: #0b66c2;          --accent-hover: #084e96;
   --accent-deep: #062a55;
   --accent-soft: rgba(11, 102, 194, 0.08);
   --accent-line: rgba(11, 102, 194, 0.32);
@@ -87,9 +79,7 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  /* Sticky nav is 64px desktop / 60px mobile — offset anchor jumps so
-     #features etc. don't land underneath it. */
-  scroll-padding-top: 40px;
+    scroll-padding-top: 40px;
   scroll-behavior: smooth;
 }
 
@@ -109,9 +99,6 @@ button { font-family: inherit; cursor: pointer; }
   padding: 0 28px;
 }
 
-/* ============================================================
-   Brand mark (used in nav & footer; reflects the selected logo)
-   ============================================================ */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -170,9 +157,6 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
 }
 
-/* ============================================================
-   Top navigation
-   ============================================================ */
 .nav {
   position: sticky;
   top: 0;
@@ -206,7 +190,6 @@ button { font-family: inherit; cursor: pointer; }
 .nav-link:hover { color: var(--text); background: var(--accent-soft); }
 .nav-link[aria-current="page"] { color: var(--text); background: var(--accent-soft); }
 
-/* ----- Items with a sub-menu (Converter, Products) ----- */
 .nav-item {
   position: relative;
   display: inline-flex;
@@ -308,7 +291,6 @@ button { font-family: inherit; cursor: pointer; }
   place-items: center;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -349,9 +331,6 @@ button { font-family: inherit; cursor: pointer; }
 .btn .arrow { transition: transform .15s; }
 .btn:hover .arrow { transform: translateX(2px); }
 
-/* ============================================================
-   Section base
-   ============================================================ */
 section { padding: 64px 0; border-bottom: 1px solid var(--border); }
 .section-head {
   display: grid;
@@ -387,9 +366,6 @@ section { padding: 64px 0; border-bottom: 1px solid var(--border); }
   text-wrap: pretty;
 }
 
-/* ============================================================
-   Code samples — tabs
-   ============================================================ */
 .code-wrap {
   background: var(--bg-elev);
   border: 1px solid var(--border);
@@ -492,9 +468,6 @@ pre.code .at { color: var(--accent); }
 [data-theme="dark"] pre.code .fn { color: #38bdf8; }
 [data-theme="dark"] pre.code .ty { color: #f472b6; }
 
-/* ============================================================
-   FAQ
-   ============================================================ */
 .faq-wrap {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -520,9 +493,6 @@ pre.code .at { color: var(--accent); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary:hover { background: var(--bg-elev-2); }
 
-/* Question span carries inline `display:flex; align-items:center` — make sure
-   long inline content (long <code>, codey identifiers) wraps instead of pushing
-   the row past the viewport on narrow screens. */
 .faq summary > span:first-child {
   flex: 1 1 auto;
   min-width: 0;
@@ -585,9 +555,6 @@ pre.code .at { color: var(--accent); }
   color: var(--accent);
 }
 
-/* ============================================================
-   Footer
-   ============================================================ */
 footer {
   padding: 60px 0 36px;
   background: var(--bg-elev-2);
@@ -650,9 +617,6 @@ footer {
 .foot-bottom a { color: var(--text-dim); }
 .foot-bottom a:hover { color: var(--text); }
 
-/* ============================================================
-   Converter detail page
-   ============================================================ */
 .subhero {
   padding: 64px 0 84px;
   border-bottom: 1px solid var(--border);
@@ -713,7 +677,6 @@ footer {
 }
 .subhero .lede + .lede { margin-top: 12px; }
 
-/* Annotated PDF visual */
 .annot {
   position: relative;
   z-index: 1;
@@ -810,7 +773,6 @@ footer {
 .annot-page .ap-bm i:nth-child(3) { width: 12px; opacity: 0.45; margin-left: 4px; }
 .annot-page .ap-bm i:nth-child(4) { width: 16px; opacity: 0.6; }
 
-/* Callouts (annotation pills) */
 .annot-pill {
   position: absolute;
   font-family: var(--font-mono);
@@ -844,7 +806,6 @@ footer {
 .annot-pill .dot { color: var(--accent); margin-right: 4px; opacity: 0.6; }
 
 
-/* Feature directory (grouped) */
 .fdir { display: flex; flex-direction: column; gap: 56px; }
 .fdir-group { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
 .fdir-group .gh {
@@ -915,7 +876,6 @@ footer {
   line-height: 1.55;
 }
 
-/* Conversion options reference */
 .optref {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -962,7 +922,6 @@ footer {
   font-weight: 500;
 }
 
-/* Collapse trigger for long optref tables (release histories) */
 .optref-more {
   border-top: 1px solid var(--border);
 }
@@ -998,7 +957,6 @@ footer {
 .optref-more .optref-row { border-bottom: 1px solid var(--border); }
 .optref-more .optref-row:last-of-type { border-bottom: 0; }
 
-/* Feature intro band */
 .fact-band {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1036,7 +994,6 @@ footer {
 }
 
 
-/* CTA block */
 .cta-block {
   background: var(--bg-deep);
   color: #e8eef7;
@@ -1119,7 +1076,6 @@ footer {
 [data-theme="dark"] .cta-block .cta-meta .row a { color: #6dafff; }
 .cta-block .cta-meta .row a:hover { text-decoration: underline; }
 
-/* Sub-page responsive */
 @media (max-width: 1000px) {
   .subhero-grid { grid-template-columns: 1fr; gap: 56px; }
   .annot { max-width: 380px; margin: 0 auto; }
@@ -1146,9 +1102,6 @@ footer {
 }
 
 
-/* ============================================================
-   SUBHERO RIGHT-SIDE VISUALS
-   ============================================================ */
 .hero-side {
   position: relative;
   max-width: 480px;
@@ -1156,7 +1109,6 @@ footer {
   width: 100%;
 }
 
-/* Subhero visual responsive */
 @media (max-width: 1000px) {
   .hero-side {
     max-width: 560px;
@@ -1193,9 +1145,6 @@ footer {
   .tline-list li { font-size: 12px; }
 }
 
-/* ============================================================
-   NAV — Products mega-menu (multi-column grouped layout)
-   ============================================================ */
 .sub-menu.sub-menu-mega {
   left: -6px;
   right: auto;
@@ -1278,9 +1227,6 @@ footer {
   .mega-col:first-child h6 { margin-top: 0; }
 }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .hero-visual { max-width: 460px; margin: 0 auto; }
@@ -1369,17 +1315,9 @@ footer {
   .news-card { padding: 22px; }
 }
 
-/* ============================================================
-   site.css - additions to the design's layers (loaded last).
-   Accessibility fixes, and the page types the design has no styles for:
-   long-form text, developer guides, the online tools, news, legal pages.
-   ============================================================ */
-
-/* Muted text meets WCAG AA (4.5:1) on both backgrounds; the design's value was ~3.6:1. */
 :root { --text-mute: #5d6878; }
 [data-theme="dark"] { --text-mute: #8d9ab0; }
 
-/* ---------- Accessibility ---------- */
 .skip-link {
   position: absolute; left: 12px; top: -48px; z-index: 1000;
   padding: 10px 14px; border-radius: var(--radius-sm);
@@ -1402,7 +1340,6 @@ main:focus { outline: none; }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-/* Menu and footer column titles are paragraphs (not h6) to keep the heading outline clean. */
 .mega-col .mega-head {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--text-mute); font-weight: 600; margin: 6px 12px 4px; padding-bottom: 6px;
@@ -1419,7 +1356,6 @@ main:focus { outline: none; }
 .foot-cta { margin-top: 18px; }
 .nav-link[aria-current="page"] { color: var(--text); }
 
-/* ---------- Long-form text (legal, guides, news, landing pages) ---------- */
 .page-head { padding: 56px 0 24px; border-bottom: 1px solid var(--border); }
 .page-head h1 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.025em; margin: 14px 0 12px; text-wrap: balance; }
 .page-head .lede { font-size: 18px; color: var(--text-dim); max-width: 760px; margin: 0; }
@@ -1446,7 +1382,6 @@ main:focus { outline: none; }
 .prose .callout p { margin: 0; }
 .section-pad { padding: 48px 0 64px; }
 
-/* Long pages with an "On this page" column */
 .doc-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 56px; align-items: start; }
 .doc-toc { position: sticky; top: 88px; max-height: calc(100vh - 110px); overflow: auto; font-size: 13.5px; }
 .doc-toc .toc-head { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--text-mute); margin: 0 0 10px; }
@@ -1457,7 +1392,6 @@ main:focus { outline: none; }
 .doc-toc li.l3 a { padding-left: 26px; font-size: 13px; }
 @media (max-width: 1000px) { .doc-layout { grid-template-columns: 1fr; } .doc-toc { display: none; } }
 
-/* ---------- Online tools ---------- */
 .tool { padding: 40px 0 56px; }
 .tool-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 22px; }
 .tool-card label, .field label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
@@ -1477,7 +1411,6 @@ main:focus { outline: none; }
 .form-ok { color: var(--success); font-size: 14px; margin-top: 10px; }
 .honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
-/* ---------- Cards and lists used by the content pages ---------- */
 .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 1000px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .card-grid { grid-template-columns: 1fr; } }
@@ -1494,27 +1427,22 @@ a.card:hover { border-color: var(--accent-line); }
 .quote-card p { margin: 0; color: var(--text); font-size: 16px; line-height: 1.6; }
 .quote-card footer { all: unset; display: block; margin-top: 10px; font-size: 13.5px; color: var(--text-mute); }
 
-/* News */
 .post-list { display: grid; gap: 14px; max-width: 820px; }
 .post-body img { max-width: 100%; height: auto; }
 
-/* 404 */
 .notfound { padding: 96px 0; text-align: center; }
 .notfound h1 { font-size: clamp(32px, 5vw, 56px); margin: 10px 0; }
 .notfound p { color: var(--text-dim); }
 .notfound .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
 
-/* Shared partials: the CTA title is an h2 (the design used h3 after an h1), FAQ question text */
 .cta-block .cta-title {
   position: relative; margin: 0 0 12px; font-size: clamp(24px, 3vw, 34px); font-weight: 600;
   letter-spacing: -0.025em; line-height: 1.1; text-wrap: balance; color: white;
 }
 .cta-section { border-bottom: 0; }
-/* The CTA block is navy in both themes; the design's light-theme link colour (#084e96) was unreadable on it. */
 .cta-block .cta-meta .row a { color: #6dafff; }
 .faq-q { display: flex; align-items: center; }
 
-/* Tool pages */
 .tool .crumbs { margin-bottom: 18px; }
 .tool-title { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -0.03em; margin: 14px 0 12px; text-wrap: balance; }
 .tool .lede { font-size: 18px; color: var(--text-dim); max-width: 780px; margin: 0 0 24px; }
@@ -1523,7 +1451,6 @@ a.card:hover { border-color: var(--accent-line); }
 .split-2 .prose h2 { margin-top: 0; }
 ol.steps { list-style: none; padding: 0; margin: 0; }
 
-/* ---------- Home page (headings are h3/p where the design used h4/h5) ---------- */
 .feat h3 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.015em; }
 .suite-card h3 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.015em; }
 .hv-pdf .hv-title { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: -0.01em; color: #0a2540; }
@@ -1542,19 +1469,15 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
 .quote-more a { color: var(--accent); text-decoration: none; font-weight: 600; }
 @media (max-width: 760px) { .quote-wrap { grid-template-columns: 1fr; padding: 36px 24px; gap: 24px; } .quote-meta { text-align: left; } }
 .demo-status[data-state="error"] .txt { color: #b45309; }
-/* 4 columns: the flagship takes 2x2 and the Excel companion 2 wide, so every row is full (16 cells). */
 .suite-card.featured { grid-row: span 2; }
 .suite-card.wide { grid-column: span 2; }
 @media (max-width: 1000px) { .suite-card.featured { grid-row: auto; } }
 @media (max-width: 760px) { .suite-card.wide { grid-column: span 1; } }
-/* The hero illustration shrinks with the screen instead of widening the page. */
 .hero-grid > * { min-width: 0; }
 .hero-visual { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); width: 100%; }
 .hv-code { overflow: hidden; }
 @media (max-width: 760px) { .hero-visual { gap: 10px; } .hv-pdf { padding: 12px 12px 20px; } }
 
-/* The full menu fits from 1001px up; below that it becomes the drawer (the design switched at 760px,
-   which overflows at tablet widths). */
 @media (max-width: 1000px) {
   .nav-links { display: none; }
   .nav-links.open {
@@ -1570,10 +1493,8 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
   .nav-links.open .sub-menu { position: static; width: 100%; flex-basis: 100%; margin-top: 6px; box-shadow: none; background: var(--bg-inset); border-color: var(--border); }
   .nav-toggle { display: grid; }
 }
-/* The bundle buttons wrap their label on a phone instead of running off the screen. */
 @media (max-width: 760px) { .suite-bundles .btn { white-space: normal; height: auto; min-height: 40px; padding-block: 8px; text-align: left; } }
 
-/* Product pages */
 .annot-page .ap-title { margin: 14px 0 10px; font-size: 14px; font-weight: 600; letter-spacing: -0.015em; color: #0a2540; }
 .fact-section { padding: 56px 0 16px; border-bottom: 0; }
 .fact-band .val a { color: var(--accent); font-size: .85em; }
@@ -1583,7 +1504,6 @@ ol.steps { list-style: none; padding: 0; margin: 0; }
 .shared-band .col h3 { margin: 0 0 6px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
 .components-section { padding-bottom: 56px; }
 
-/* Pricing (design h4/span headings are h3/h4 here for a clean outline) */
 .pricing-hero { padding-bottom: 56px; }
 .pricing-section { padding-top: 24px; }
 .subhero .lede a, .section-sub a { color: var(--accent); }
@@ -1597,7 +1517,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .notes-grid.notes-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 760px) { .notes-grid.notes-2 { grid-template-columns: 1fr; } }
 .price-foot-note a { color: var(--accent); }
-/* Hero columns shrink with the screen; illustrations never set the column width. */
 .subhero-grid > * { min-width: 0; }
 .hero-side { max-width: 100%; }
 .cmap-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1607,7 +1526,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .meta-side code { overflow-wrap: anywhere; }
 @media (max-width: 440px) { .comp-card.is-flagship { flex-wrap: wrap; } .comp-card.is-flagship .rhs { width: 100%; } }
 
-/* Downloads */
 .dl-row-main h3 { margin: 0 0 4px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
 @media (max-width: 760px) { .dl-row-main h3 { font-size: 15px; } }
 .dl-subhead { margin-top: 56px; }
@@ -1621,14 +1539,11 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .cmd-row { min-width: 0; }
 .cmd-row code, .zip-cli code { min-width: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
 
-/* PDF to Text: the fake section titles in the hero visual are paragraphs (the design used h5) */
 .ex-pdf-body .ex-pdf-title { margin: 8px 0 4px; font-size: 11px; font-weight: 600; letter-spacing: 0; color: #0a2540; }
 .ex-pdf-body .ex-pdf-title:first-child { margin-top: 0; }
 
-/* PDF Viewer page: the fake document title in the hero visual is a p (the design used h6) */
 .vwr-paper .vp-title { margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: -0.01em; color: #0a2540; line-height: 1.2; }
 
-/* Home hero chart bars (heights were inline styles in the design) */
 .hv-chart span:nth-child(1) { height: 30%; }
 .hv-chart span:nth-child(2) { height: 55%; }
 .hv-chart span:nth-child(3) { height: 42%; }
@@ -1636,10 +1551,8 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .hv-chart span:nth-child(5) { height: 88%; }
 .hv-chart span:nth-child(6) { height: 65%; }
 
-/* Downloads: NuGet id under each component */
 .dl-nuget { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 12px; color: var(--text-mute); }
 
-/* News */
 .post-list { list-style: none; padding: 0; margin: 0; }
 .post-card h2 { font-size: 20px; line-height: 1.3; margin: 0 0 8px; }
 .post-card h2 a { color: var(--text); text-decoration: none; }
@@ -1651,7 +1564,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .post-nav .card { display: flex; flex-direction: column; gap: 4px; font-size: 14.5px; }
 @media (max-width: 760px) { .post-nav { grid-template-columns: 1fr; } .post-body .post-img { float: none; display: block; margin: 0 0 12px; } }
 
-/* Customers */
 .customer-list li { display: flex; flex-direction: column; gap: 2px; text-align: left; }
 .customer-list .cl-name { color: var(--text); }
 .customer-list .cl-country { font-family: var(--font-mono); font-size: 11.5px; font-weight: 400; color: var(--text-mute); }
@@ -1662,13 +1574,11 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .quote-long ul { margin: 10px 0; padding-left: 1.2em; color: var(--text-dim); }
 .quote-long p + p { margin-top: 10px; }
 
-/* FAQ page */
 .faq-group-title { font-size: 22px; letter-spacing: -0.015em; margin: 40px 0 14px; scroll-margin-top: 90px; }
 .faq-group-title:first-child { margin-top: 0; }
 .faq-group-note { color: var(--text-dim); font-size: 14.5px; margin: -6px 0 14px; max-width: 760px; }
 .faq .answer.prose { max-width: none; font-size: 15px; }
 
-/* Developer guides */
 .guide-note { margin-top: 18px; max-width: 780px; font-size: 14.5px; }
 .guide-note a { color: var(--accent); }
 .guide-body h2, .guide-body h3, .guide-body h4 { scroll-margin-top: 90px; }
@@ -1682,68 +1592,48 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
   .compare-table .col-price { white-space: normal; }
 }
 
-/* Long pages: the text column never grows past the screen (wide tables and code scroll inside it). */
 .doc-layout > * { min-width: 0; }
 @media (max-width: 1000px) { .doc-layout { grid-template-columns: minmax(0, 1fr); } }
 .prose { overflow-wrap: anywhere; }
 .prose pre, .prose code { overflow-wrap: normal; }
-/* Pricing: no "Most popular" badge (no data says so) */
 .flag-tier-recommended::before { content: none; display: none; }
-/* The section kicker label is used on more pages than pricing (downloads, support, renewals). */
 .kicker { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
 .section-head h2:not(.section-title) { font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 12px; text-wrap: balance; }
 
-/* PDF Viewer hero: the labels sit 90-120px outside the viewer, which only fits from 1400px up. Between the tablet
-   layout and that, they overlap the viewer's edges instead (as on tablets), without the connector lines. */
 @media (min-width: 1001px) and (max-width: 1399px) {
   .vwr-pill::before { display: none; }
   .vwr-pill.vp-tl, .vwr-pill.vp-ml, .vwr-pill.vp-bl { left: -14px; }
   .vwr-pill.vp-tr, .vwr-pill.vp-mr, .vwr-pill.vp-br { right: -14px; }
 }
 
-/* Home hero illustration: the panels keep the page shape but grow when their content needs more height (the
-   last lines of code were cut and the chart squashed at some widths), both rows the same height; the code text
-   scales with its panel so the longest line (27 characters) always fits. */
 .hv-chart { flex-shrink: 0; }
 .hero-visual { align-items: stretch; }
 .hero-visual .hv-arrow { align-self: center; }
-/* overflow visible lets the page-shaped box grow with its content (an aspect-ratio box does that only then). */
 .hv-side { overflow: visible; min-width: 0; width: 100%; }
 .hv-bar { border-radius: 7px 7px 0 0; }
 .hv-html { container-type: inline-size; }
 .hv-code { flex-shrink: 0; font-size: min(10.5px, calc((100cqi - 20px) / 16.8)); padding: 14px 10px 16px; }
 
-/* PDF Creator hero: the invoice is taller than the page shape at every width (total, signature cut and the footer
-   over the tax row). The page grows with its content, and the footer follows the content instead of being pinned
-   to the bottom. */
 .builder-page { overflow: visible; width: 100%; }
 .bp-foot { position: static; margin-top: 16px; flex-wrap: wrap; gap: 2px 10px; }
 
-/* PDF Security hero: same as the PDF Viewer, the outside labels only fit from 1400px up. */
 @media (min-width: 1001px) and (max-width: 1399px) {
   .psec-pill::before { display: none; }
   .psec-pill.pp-tl, .psec-pill.pp-ml, .psec-pill.pp-bl { left: -14px; }
   .psec-pill.pp-tr, .psec-pill.pp-mr, .psec-pill.pp-br { right: -14px; }
 }
-/* PDF Viewer hero: the title bar has no room for the host name on the narrowest phones. */
 @media (max-width: 359px) { .vwr-host { display: none; } }
-/* PDF Creator hero: below 1001px the labels sit on the page, and the top two covered its header (as on the
-   other product heroes, they are left out there). */
 @media (max-width: 1000px) { .builder-pill.bp-tl, .builder-pill.bp-tr { display: none; } }
 
-/* Option tables: property names broke mid-word in the 220px column; they get more room and break only after a dot. */
 .optref-row .key { word-break: normal; overflow-wrap: normal; }
 @media (min-width: 761px) { .optref-head, .optref-row { grid-template-columns: 300px minmax(0, 1fr); } }
 
-/* Links inside running text (page intros, FAQ answers) looked like the text around them. */
 .page-head .lede a, .faq .answer a, .notfound p a { color: var(--accent); }
 .page-head .lede a:hover, .faq .answer a:hover, .notfound p a:hover { text-decoration: underline; }
 
-/* Feature grids with an odd number of items left an empty grey cell; the last item takes the whole row. */
 .fdir-list > .fdir-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.fdir-item p a, .fdir .gh p a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-/* Support: the documentation links of the white cards were white on white (the chip style was made for the dark
-   flagship card only). */
 .doc-card:not(.doc-card-flag) .doc-link-chip { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
 .doc-card:not(.doc-card-flag) .doc-link-chip:hover { background: var(--accent); color: #fff; }
 @media (max-width: 760px) {
@@ -1751,47 +1641,33 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
   .compare-table .price-row .col-price::before { min-width: 0; margin: 0; }
 }
 
-/* Downloads: the archive name breaks after a hyphen instead of mid-number. */
 .zip-name { word-break: normal; overflow-wrap: anywhere; }
 
-/* Mock-up paper cards in the product heroes: their <footer> strips took the page footer's themed background, which
-   is dark in the dark theme and made the strip's text unreadable. The paper stays light in both themes. */
 .iex-foot, .rastr-pdf-foot, .ex-pdf-foot, .psec-foot { background: #eaeff5; }
 [data-theme="dark"] .merge-name { color: #0a2540; }
 [data-theme="dark"] .merge-meta { color: #5d6878; }
 @media (max-width: 760px) { .builder-pill.bp-bl, .builder-pill.bp-br { display: none; } }
 
-/* HTML to PDF hero: the labels covered the page header text and its page number. */
 @media (min-width: 1001px) {
   .annot-pill.tl { top: 6px; }
   .annot-pill.br { bottom: 16%; }
   .annot-pill.bm { bottom: -22px; }
 }
-/* PDF Viewer hero: between the tablet and wide layouts the top labels covered the toolbar buttons. */
 @media (min-width: 1001px) and (max-width: 1399px) { .vwr-pill.vp-tl, .vwr-pill.vp-tr { display: none; } }
-/* PDF Library: the "Flagship" tag stretched across the card; it hugs its text. */
 .comp-card.is-flagship .flag-tag { align-self: flex-start; width: fit-content; }
 
-/* Customer names longer than the card (PricewaterhouseCoopers) wrap inside it. */
 .customer-list .cl-name { overflow-wrap: anywhere; hyphens: auto; }
 .customer-list li { min-width: 0; }
 
-/* Price tables: the column titles took the 19px price style; they are the small caps label of the table head,
-   right-aligned with the buy buttons below them. */
 .price-row.price-head .col-price { font-size: 10.5px; font-weight: 500; letter-spacing: 0.06em; }
 .compare-table .price-row.price-head .col-price { text-align: left; }
 
-/* Support hero illustration: a long method name wraps on the narrowest phones instead of leaving the card. */
 .ds-api li code { overflow-wrap: anywhere; }
 .ds-api li { min-width: 0; }
 
-/* Home hero: tighter spacing around the "Supports" row (the meta lines wrapped with a 28px row gap, and the hero
-   kept 96px under the row). */
 .hero { padding-bottom: 36px; }
 .hero-meta { gap: 8px 28px; margin-top: 28px; }
-.trust { padding: 16px 0; border-bottom: 0; } /* the hero's own bottom border closes the strip */
-
-/* Online converters: the switch between HTML to PDF and URL to PDF, and the optional-field note. */
+.trust { padding: 16px 0; border-bottom: 0; } 
 .tool-switch { display: inline-flex; gap: 4px; padding: 4px; margin: 0 0 16px; background: var(--bg-inset); border: 1px solid var(--border); border-radius: var(--radius); }
 .tool-switch a { padding: 8px 16px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; color: var(--text-dim); }
 .tool-switch a:hover { color: var(--text); }
@@ -1800,7 +1676,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .tool-card .field:first-child, .tool-card .field-row .field { margin-top: 0; }
 .opt-note { font-weight: 400; color: var(--text-mute); }
 
-/* Pricing with four licenses (Developer, Developer + Maintenance, Company, Enterprise). */
 .flag-tier-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .kit-prices { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .lic-mini-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -1815,7 +1690,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
   .price-table-4 .price-row { grid-template-columns: 1fr; }
 }
 
-/* ---------- ExpertPdf Anywhere page ---------- */
 .any-cmd { margin-top: 22px; max-width: 520px; }
 .any-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; max-width: 440px; width: 100%; margin-left: auto; }
 .any-card-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--bg-inset); font-family: var(--font-mono); font-size: 13px; color: var(--text); }
@@ -1844,18 +1718,19 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 @media (max-width: 1000px) { .any-card { margin: 0 auto; } .any-prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .any-tools, .any-prices { grid-template-columns: minmax(0, 1fr); } }
 
-/* Renewals with three columns (Developer, Company, Enterprise). */
 @media (min-width: 761px) { #renewal-prices .price-table-3 .price-row { grid-template-columns: 2fr repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 761px) and (max-width: 1000px) { #renewal-prices .price-table-3 .price-row { grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); } }
 
-/* ---------- ExpertPdf Anywhere across the site ---------- */
 .nav-any { display: inline-flex; align-items: center; gap: 6px; }
 .nav-new { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--accent); padding: 1px 6px; border-radius: 4px; }
 .mega-any { display: flex; flex-direction: column; gap: 3px; margin: 4px 4px 10px; padding: 12px 14px; border-radius: var(--radius); background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--text); }
 .mega-any:hover { border-color: var(--accent); }
+.mega-any-head { display: flex; flex-direction: column; gap: 3px; color: inherit; text-decoration: none; }
 .mega-any-name { display: flex; align-items: center; gap: 8px; font-weight: 600; }
 .mega-any-desc { font-size: 12.5px; color: var(--text-dim); }
-.mega-classic { margin: 4px 12px 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); }
+.mega-any-name .mega-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.5; color: #fff; background: var(--accent); padding: 1px 7px; border-radius: 4px; }
+.mega-classic { display: flex; align-items: center; gap: 10px; margin: 16px 12px 10px; font-size: 15px; font-weight: 600; color: var(--text); }
+.mega-classic::after { content: ""; flex: 1; height: 1px; background: var(--border-strong); }
 .hero-announce { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; padding: 5px 12px 5px 6px; border: 1px solid var(--accent-line); border-radius: 100px; background: var(--accent-soft); color: var(--text); font-size: 13.5px; font-weight: 500; max-width: 100%; }
 .hero-announce:hover { border-color: var(--accent); }
 .hero-announce .pill-tag { margin: 0; }
@@ -1875,7 +1750,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .any-band-section { padding: 8px 0 48px; border-bottom: 0; }
 #anywhere.pricing-section .any-prices { margin-top: 8px; }
 
-/* Home: ExpertPdf Anywhere is the hero; the HTML to PDF Converter follows in the same layout, with an h2. */
 .hero-any { padding-bottom: 72px; }
 .hero-any .any-card { margin-left: auto; }
 .hero-classic { padding-top: 64px; background: var(--bg); }
@@ -1884,10 +1758,6 @@ h4.ft-name { display: block; font-weight: 500; margin-top: 0; }
 .hero .hero-h2 em { font-style: normal; color: var(--accent); font-family: var(--font-mono); font-weight: 500; letter-spacing: -0.05em; }
 @media (max-width: 1000px) { .hero-any .any-card { margin: 0 auto; } }
 
-/* ---------- Code never scrolls sideways (decision 2026-10-21) ----------
-   Tab rows wrap onto more lines; code lines wrap with a hanging indent past the line numbers; commands wrap. */
-/* Tab rows and toolbars stay on one line: a tab row that does not fit becomes a dropdown (site.js adds .tabs-select),
-   a long file name is shortened. */
 .tabs { flex-wrap: nowrap; overflow: hidden; }
 .tabs-picker { display: none; }
 .tabs.tabs-select { padding: 8px; }
@@ -1911,7 +1781,6 @@ pre.code.code-lines .ln { text-indent: 0; }
 .cmd-row code, .zip-cli code { overflow-x: visible; white-space: normal; overflow-wrap: anywhere; }
 .prose pre code { white-space: inherit; overflow-wrap: anywhere; }
 
-/* Option and release tables: long identifiers (package names) wrap inside their cell. */
 .optref-row > * { min-width: 0; }
 .optref-row .desc { overflow-wrap: anywhere; }
 
@@ -1945,10 +1814,8 @@ section { padding: 44px 0; }
 .fact-section { padding: 40px 0 12px; }
 .components-section { padding-bottom: 40px; }
 .pricing-hero { padding-bottom: 40px; }
-/* Menu items stay on one line; between 1001px and 1199px the gaps are tighter so the full menu still fits. */
 .nav-link { white-space: nowrap; }
 @media (min-width: 1001px) and (max-width: 1199px) { .nav-inner { gap: 16px; } .nav-link { padding: 6px 8px; } }
-/* Downloads: the two flagship cards hold long, unbreakable archive names; side by side only from 1100px. */
 @media (max-width: 1100px) { .dl-flag { grid-template-columns: minmax(0, 1fr); } }
 .cta-block { padding: 40px 44px; }
 .notfound { padding: 64px 0; }
@@ -1970,7 +1837,6 @@ footer { padding: 44px 0 28px; }
   .section-title { font-size: 22px; }
 }
 
-/* Home suite grid: the featured HTML to PDF card (two columns, two rows) lists its features instead of empty space. */
 .suite-feats { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.92); }
 .suite-feats li { position: relative; padding-left: 20px; }
 .suite-feats li::before { content: "✓"; position: absolute; left: 0; top: 0; font-weight: 700; color: #fff; opacity: .85; }
@@ -1978,18 +1844,14 @@ footer { padding: 44px 0 28px; }
 .suite-install .dim { opacity: .6; margin-right: 4px; }
 @media (max-width: 760px) { .suite-feats { grid-template-columns: 1fr; } }
 
-/* Pricing: ExpertPdf Anywhere in the hero (its price panel links to the order pages); the HTML to PDF Converter
-   section opens with its own price panel beside the description. */
 a.lic-stack-tier { color: inherit; text-decoration: none; }
 a.lic-stack-tier:hover { border-color: var(--accent-line); }
 .flag-intro { margin-bottom: 28px; }
 .flag-intro-title { font-size: clamp(24px, 2.6vw, 32px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 12px; text-wrap: balance; }
 .flag-intro .section-sub + .section-sub { margin-top: 10px; }
 
-/* Product resources under each product hero (_ProductLinks): one line per product, the product named when several. */
 .product-links + .product-links { margin-top: 6px; }
 .product-links-name { color: var(--text); font-weight: 600; margin-right: 4px; }
-/* Downloads, other components: each row links the product page, its docs and NuGet package, and the archive. */
 .dl-row-main h3 a { color: inherit; text-decoration: none; }
 .dl-row-main h3 a:hover { color: var(--accent); }
 .dl-row-main p.dl-links { margin-top: 6px; font-size: 12.5px; color: var(--text-mute); }
@@ -1998,6 +1860,105 @@ a.lic-stack-tier:hover { border-color: var(--accent-line); }
 a.dl-row-cta { text-decoration: none; }
 a.dl-row-cta:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .dl-row:hover .dl-row-cta:not(:hover) { background: var(--bg-elev); color: var(--text); border-color: var(--border-strong); }
+.prose :not(pre) > code { overflow-wrap: anywhere; }
+.fact-band .val { display: block; text-wrap: balance; }
+.fact-band .fact-note { display: block; margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--text-dim); }
+
+.r2p-tag.html { background: rgba(228, 77, 38, 0.12); color: #c2410c; }
+.r2p-tag.docx { background: rgba(43, 87, 154, 0.14); color: #2b579a; }
+.r2p-tag.xlsx { background: rgba(33, 115, 70, 0.14); color: #1d6b40; }
+.r2p-tag.pptx { background: rgba(196, 62, 28, 0.12); color: #b7381a; }
+.r2p-tbl.r2p-sheet { grid-template-columns: repeat(4, 1fr); margin-top: 2px; }
+.r2p-tbl.r2p-sheet span { height: 15px; }
+.r2p-slides { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 2px; }
+.r2p-slide { display: flex; flex-direction: column; gap: 5px; aspect-ratio: 16 / 10; max-width: 100%; padding: 8px 7px; border: 1px solid rgba(10, 37, 64, 0.18); border-radius: 3px; background: rgba(11, 102, 194, 0.04); }
+.office-links a { color: var(--accent); }
+.mega-office { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--accent-line); }
+.mega-office a { text-align: center; font-size: 13px; line-height: 1.3; padding: 4px 10px; border-radius: 100px; background: var(--bg-elev); border: 1px solid var(--accent-line); color: var(--text); text-decoration: none; }
+.mega-office a.is-flag { font-weight: 600; color: var(--accent); border-color: var(--accent); }
+@media (max-width: 760px) {
+  .mega-office { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mega-office a { font-size: 12.5px; padding-left: 6px; padding-right: 6px; }
+  .mega-office a:first-child { grid-column: 1 / -1; }
+  .mega-office a:nth-child(4) { order: 1; } .mega-office a:nth-child(7) { order: 2; }
+  .mega-office a:nth-child(5) { order: 3; } .mega-office a:nth-child(8) { order: 4; }
+  .mega-office a:nth-child(6) { order: 5; } .mega-office a:nth-child(9) { order: 6; }
+}
+.mega-office a:hover { border-color: var(--accent); color: var(--accent); }
+
+.news-head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; }
+.news-head-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.news-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 0 0 10px; font-family: var(--font-mono); font-size: 12px; color: var(--text-mute); }
+.news-badge { font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 10px; line-height: 1.5; color: #fff; background: var(--accent); padding: 1px 7px; border-radius: 4px; margin-right: 4px; }
+.news-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
+.news-tag { font-size: 12px; line-height: 1.4; padding: 3px 10px; border-radius: 100px; background: var(--accent-soft); border: 1px solid var(--accent-line); color: var(--accent); }
+.news-feature { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 32px 40px; padding: 34px 38px; border-radius: var(--radius-lg); background: var(--bg-elev); border: 1px solid var(--border); }
+.news-feature::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--accent); }
+.news-feature h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; text-wrap: balance; }
+.news-feature h2 a, .news-card h3 a { color: var(--text); text-decoration: none; }
+.news-feature h2 a:hover, .news-card h3 a:hover { color: var(--accent); }
+.news-feature-summary { font-size: 17px; line-height: 1.55; color: var(--text-dim); margin: 0 0 16px; max-width: 640px; }
+.news-feature-toc { border-left: 1px solid var(--border); padding-left: 32px; }
+.news-toc-head { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); margin: 0 0 10px; }
+.news-feature-toc ol, .post-toc ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+.news-feature-toc a, .post-toc a { display: block; padding: 6px 10px; border-radius: var(--radius-sm); color: var(--text-dim); text-decoration: none; font-size: 14.5px; line-height: 1.35; }
+.news-feature-toc a:hover, .post-toc a:hover { background: var(--accent-soft); color: var(--text); }
+.news-older-title { font-size: 22px; letter-spacing: -0.01em; margin: 48px 0 16px; }
+.news-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.news-grid > li { display: flex; }
+.news-card { position: relative; flex: 1; display: flex; flex-direction: column; padding: 20px 22px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color .15s, transform .15s; }
+.news-card:hover { border-color: var(--accent-line); transform: translateY(-2px); }
+.news-card h3 { font-size: 18px; line-height: 1.3; margin: 0 0 8px; }
+.news-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.news-card > p:not(.news-meta):not(.news-tags) { color: var(--text-dim); font-size: 14.5px; line-height: 1.55; margin: 0 0 14px; }
+.news-card .news-tags { margin: auto 0 0; }
+.news-card .news-tag { font-size: 11.5px; padding: 2px 8px; }
+.post-head .news-tags { margin: 18px 0 0; }
+.post-summary { font-size: 19px; line-height: 1.5; color: var(--text-dim); max-width: 780px; margin: 0 0 16px; }
+.post-meta { margin: 0; }
+.post-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; }
+.post-main .post-nav { max-width: 760px; }
+.post-body { max-width: 760px; }
+.post-body h2 { padding-top: 28px; border-top: 1px solid var(--border); }
+.post-body li::marker { color: var(--accent); }
+.post-aside { display: grid; gap: 16px; }
+@media (min-width: 1001px) and (min-height: 900px) { .post-aside { position: sticky; top: 90px; } }
+.post-aside-box { padding: 18px 20px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); }
+.post-toc a { padding: 5px 8px; font-size: 14px; }
+.post-get { background: var(--accent-soft); border-color: var(--accent-line); }
+.post-get-version { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); margin: 0 0 6px; }
+.post-get-text { font-size: 14px; line-height: 1.5; color: var(--text-dim); margin: 0 0 14px; }
+.post-get .btn + .btn { margin-left: 6px; }
+.post-latest { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.post-latest a { display: block; color: var(--text); font-size: 14.5px; font-weight: 500; line-height: 1.35; text-decoration: none; }
+.post-latest a:hover { color: var(--accent); }
+.post-latest time { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-mute); }
+@media (max-width: 1000px) {
+  .news-feature { grid-template-columns: minmax(0, 1fr); }
+  .news-feature-toc { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: 22px; }
+  .news-feature-toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .post-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .post-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .news-feature { padding: 24px 20px; }
+  .news-feature-toc ol, .news-grid, .post-aside { grid-template-columns: minmax(0, 1fr); }
+}
+.page-head .lede.vh-anywhere { margin-top: 12px; font-size: 16px; }
+.any-html { background: var(--bg-elev); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.any-html-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px 56px; align-items: center; }
+.any-html-kicker { margin: 0 0 10px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.any-html .section-sub { max-width: 640px; }
+.any-html-list { margin: 18px 0 24px; padding-left: 1.2em; display: grid; gap: 6px; color: var(--text-dim); font-size: 15px; line-height: 1.5; }
+.any-html-list li::marker { color: var(--accent); }
+.any-html-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.any-html-fact { display: flex; flex-direction: column; gap: 4px; padding: 20px 22px; background: var(--bg); }
+.any-html-fact .label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); }
+.any-html-fact strong { font-size: 18px; letter-spacing: -0.01em; color: var(--text); }
+.any-html-fact span:last-child { font-size: 13.5px; line-height: 1.45; color: var(--text-dim); }
+@media (max-width: 1000px) { .any-html-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .any-html-card { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---- Sample pages ---- */
 .foot-slim { padding: 36px 0 28px; margin-top: 0; }

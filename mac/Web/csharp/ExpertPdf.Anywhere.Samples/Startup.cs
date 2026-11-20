@@ -31,6 +31,12 @@ namespace ExpertPdf.Samples
             services.AddRazorPages();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IViewRenderService, ViewRenderService>();
+
+            // Echo the client's download token back as a cookie on file
+            // responses so the page script can restore the "Converting …" button
+            // when the download is delivered (see DownloadTokenPageFilter).
+            services.Configure<Microsoft.AspNetCore.Mvc.MvcOptions>(options =>
+                options.Filters.Add<DownloadTokenPageFilter>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

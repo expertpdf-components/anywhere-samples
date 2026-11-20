@@ -106,10 +106,12 @@ namespace ExpertPdf.Samples.Pages
             // the PDF standard; PDF/A-3a is also tagged (accessible)
             converter.PdfStandardSubset = (PdfStandardSubset)Enum.Parse(typeof(PdfStandardSubset), DdlStandard);
 
-            // page numbers in the footer
+            // page numbers in the footer; the converter shows a footer by default, so it is
+            // switched on or off here, and its default text is cleared to show only the page number
+            converter.PdfDocumentOptions.ShowFooter = ChkPageNumbers;
             if (ChkPageNumbers)
             {
-                converter.PdfDocumentOptions.ShowFooter = true;
+                converter.PdfFooterOptions.FooterText = string.Empty;
                 converter.PdfFooterOptions.ShowPageNumber = true;
             }
 
